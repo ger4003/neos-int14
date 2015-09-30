@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0c5223313191b20d76575e6c0f68b031",
+    "hash": "f8c57a4926c8bb2ce38669963fa36aee",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -749,6 +749,94 @@
                 "orm"
             ],
             "time": "2015-08-31 13:19:01"
+        },
+        {
+            "name": "flowpack/elasticsearch",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Flowpack/Flowpack.ElasticSearch.git",
+                "reference": "c73bfaae2c4530b9b73f343bfc6aa465b70a2788"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Flowpack/Flowpack.ElasticSearch/zipball/c73bfaae2c4530b9b73f343bfc6aa465b70a2788",
+                "reference": "c73bfaae2c4530b9b73f343bfc6aa465b70a2788",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "Flowpack\\ElasticSearch": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "This package provides wrapper functionality for the elasticsearch engine.",
+            "time": "2014-08-29 12:46:22"
+        },
+        {
+            "name": "flowpack/elasticsearch-contentrepositoryadaptor",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Flowpack/Flowpack.ElasticSearch.ContentRepositoryAdaptor.git",
+                "reference": "888c9623ac3e82f1e858a198f14225f26539e5cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Flowpack/Flowpack.ElasticSearch.ContentRepositoryAdaptor/zipball/888c9623ac3e82f1e858a198f14225f26539e5cf",
+                "reference": "888c9623ac3e82f1e858a198f14225f26539e5cf",
+                "shasum": ""
+            },
+            "require": {
+                "flowpack/elasticsearch": "*",
+                "php": ">=5.5.0",
+                "typo3/eel": "*",
+                "typo3/typo3cr-search": "*"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "Flowpack\\ElasticSearch\\ContentRepositoryAdaptor": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "description": "This package provides functionality for using Elasticsearch on top of TYPO3CR.Search",
+            "homepage": "http://flowpack.org/",
+            "time": "2015-09-25 10:49:02"
+        },
+        {
+            "name": "flowpack/searchplugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skurfuerst/Flowpack.SearchPlugin.git",
+                "reference": "f69450883bd40c7e58c1ab68c772ce252ee388a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skurfuerst/Flowpack.SearchPlugin/zipball/f69450883bd40c7e58c1ab68c772ce252ee388a7",
+                "reference": "f69450883bd40c7e58c1ab68c772ce252ee388a7",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "Flowpack\\SearchPlugin": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Add description here",
+            "time": "2015-07-28 12:55:05"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1505,6 +1593,34 @@
             ],
             "description": "Content repository based on TYPO3 Flow, specifically made for TYPO3 Neos.",
             "time": "2015-07-31 16:26:07"
+        },
+        {
+            "name": "typo3/typo3cr-search",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/neos/typo3cr-search.git",
+                "reference": "3c8e4491797b93f5dcd26c4764d1f80f8e94c455"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/neos/typo3cr-search/zipball/3c8e4491797b93f5dcd26c4764d1f80f8e94c455",
+                "reference": "3c8e4491797b93f5dcd26c4764d1f80f8e94c455",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/flow": "*",
+                "typo3/typo3cr": "*"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\TYPO3CR\\Search": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Common code and interface for a TYPO3CR search implementation",
+            "time": "2015-09-18 06:53:51"
         },
         {
             "name": "typo3/typoscript",
@@ -2628,6 +2744,9 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "typo3/typo3cr-search": 20,
+        "flowpack/elasticsearch-contentrepositoryadaptor": 20,
+        "flowpack/searchplugin": 20,
         "flowpack/behat": 20,
         "typo3/surf": 20
     },
