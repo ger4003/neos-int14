@@ -13,6 +13,14 @@ use TYPO3\Flow\I18n\Exception as I18nException;
 
 class DateGroupViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractLocaleAwareViewHelper {
 
+	
+	/**
+	 * NOTE: This property has been introduced via code migration to ensure backwards-compatibility.
+	 * @see AbstractViewHelper::isOutputEscapingEnabled()
+	 * @var boolean
+	 */
+	protected $escapeOutput = FALSE;
+
 	/**
 	 * @Flow\Inject
 	 * @var DatetimeFormatter
