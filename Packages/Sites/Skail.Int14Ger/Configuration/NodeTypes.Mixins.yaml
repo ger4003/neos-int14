@@ -29,7 +29,7 @@
   abstract: TRUE
   properties:
     listImage:
-      type: TYPO3\Media\Domain\Model\ImageVariant
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'List Image'
         icon: 'icon-picture'

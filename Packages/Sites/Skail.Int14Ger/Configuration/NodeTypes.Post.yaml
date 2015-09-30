@@ -31,7 +31,7 @@
         inspector:
           group: document
     headerImage:
-      type: TYPO3\Media\Domain\Model\ImageVariant
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Header Image'
         icon: icon-picture
@@ -39,7 +39,7 @@
         inspector:
           group: media
     teaserImage:
-      type: TYPO3\Media\Domain\Model\ImageVariant
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Teaser Image'
         inspector:

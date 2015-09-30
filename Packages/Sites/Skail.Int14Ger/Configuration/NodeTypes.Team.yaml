@@ -44,7 +44,7 @@
         inspector:
           group: document
     mainImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: Main Image
         reloadIfChanged: TRUE
@@ -53,7 +53,7 @@
         inspector:
           group: media
     listImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: List Image
         reloadIfChanged: TRUE

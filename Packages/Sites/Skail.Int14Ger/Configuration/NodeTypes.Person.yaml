@@ -34,7 +34,7 @@
         'TYPO3.Neos/Validation/NotEmptyValidator': []
         'TYPO3.Neos/Validation/EmailAddressValidator': []
     listImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: List Image
         icon: 'icon-picture'
@@ -42,7 +42,7 @@
         inspector:
           group: media
     mainImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: Main Image
         icon: 'icon-picture'

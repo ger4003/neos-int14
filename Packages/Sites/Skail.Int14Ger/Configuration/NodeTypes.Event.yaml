@@ -157,7 +157,7 @@
       validation:
         TYPO3.Neos/Validation/EmailAddressValidator: {  }
     mainImage:
-      type: TYPO3\Media\Domain\Model\ImageVariant
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Bild (800x320)'
         reloadIfChanged: true
@@ -181,7 +181,7 @@
                   width: 800
                   height: 320
     locationAvatar:
-      type: TYPO3\Media\Domain\Model\ImageVariant
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Bild des Veranstalters (60x60)'
         icon: icon-picture
@@ -202,7 +202,7 @@
                   sixteenNine: null
                 allowCustom: true
     listImage:
-      type: TYPO3\Media\Domain\Model\ImageVariant
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Bild für Liste (130x130)'
         reloadIfChanged: false
@@ -225,7 +225,7 @@
                   width: 130
                   height: 130
     timelineImage:
-      type: TYPO3\Media\Domain\Model\ImageVariant
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Bild für Timeline (528x214)'
         reloadIfChanged: false

@@ -6,7 +6,7 @@
     title:
       defaultValue: 'InnerSection'
     backgroundImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: "Hintergrundbild"
         icon: 'icon-picture'

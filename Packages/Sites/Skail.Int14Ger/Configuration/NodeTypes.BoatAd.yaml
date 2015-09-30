@@ -46,7 +46,7 @@
           group: document
           position: 30
     backgroundImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: 'TYPO3\Media\Domain\Model\ImageInterface'
       ui:
         label: 'Hintergrundbild 1920x310'
         icon: 'icon-picture'
