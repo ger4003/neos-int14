@@ -1,5 +1,7 @@
+
 'Skail.Int14Ger:TeamList':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': true
   ui:
     label: 'Team List'
     group: kv

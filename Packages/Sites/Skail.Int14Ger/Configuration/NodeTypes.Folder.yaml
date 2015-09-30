@@ -1,9 +1,10 @@
+
 'Skail.Int14Ger:Folder':
   superTypes:
-    - 'TYPO3.Neos:Document'
+    'TYPO3.Neos:Document': true
   ui:
-    label: 'Folder'
-    icon: 'icon-folder-open-alt'
+    label: Folder
+    icon: icon-folder-open-alt
   properties:
     _hiddenInIndex:
       defaultValue: true

@@ -1,63 +1,65 @@
+
 'Skail.Int14Ger:Team':
-  superTypes: ['TYPO3.Neos:Document']
+  superTypes:
+    'TYPO3.Neos:Document': true
   ui:
     label: 'Int 14 Team'
     group: kv
-    icon: 'icon-book'
+    icon: icon-book
   properties:
     sailnumber:
       type: string
       ui:
-        label: 'Segelnummer'
-        reloadIfChanged: TRUE
+        label: Segelnummer
+        reloadIfChanged: true
         inspector:
           group: document
     helm:
       type: reference
       ui:
-        label: 'Steuermann'
-        reloadIfChanged: TRUE
+        label: Steuermann
+        reloadIfChanged: true
         inspector:
           group: document
           editorOptions:
-            nodeTypes: ['Skail.Int14Ger:Person']
+            nodeTypes:
+              - 'Skail.Int14Ger:Person'
     crew:
       type: reference
       ui:
-        label: 'Vorschoter'
-        reloadIfChanged: TRUE
+        label: Vorschoter
+        reloadIfChanged: true
         inspector:
           group: document
           editorOptions:
-            nodeTypes: ['Skail.Int14Ger:Person']
+            nodeTypes:
+              - 'Skail.Int14Ger:Person'
     location:
       type: string
       ui:
-        label: 'Standort'
-        reloadIfChanged: TRUE
+        label: Standort
+        reloadIfChanged: true
         inspector:
           group: document
     description:
       type: string
       ui:
-        label: 'Beschreibung'
+        label: Beschreibung
         inspector:
           group: document
     mainImage:
-      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
-        label: Main Image
-        reloadIfChanged: TRUE
-        icon: 'icon-picture'
-        reloadIfChanged: TRUE
+        label: 'Main Image'
+        reloadIfChanged: true
+        icon: icon-picture
         inspector:
           group: media
     listImage:
-      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
-        label: List Image
-        reloadIfChanged: TRUE
-        icon: 'icon-picture'
-        reloadIfChanged: TRUE
+        label: 'List Image'
+        reloadIfChanged: true
+        icon: icon-picture
         inspector:
           group: media

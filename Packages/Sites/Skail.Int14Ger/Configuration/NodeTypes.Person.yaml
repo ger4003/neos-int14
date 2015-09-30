@@ -1,51 +1,53 @@
+
 'Skail.Int14Ger:Person':
-  superTypes: ['TYPO3.Neos:Document']
+  superTypes:
+    'TYPO3.Neos:Document': true
   ui:
-    label: 'Person'
+    label: Person
     group: kv
-    icon: 'icon-user'
+    icon: icon-user
   properties:
     firstName:
       type: string
       ui:
-        label: 'Vorname'
-        reloadIfChanged: TRUE
+        label: Vorname
+        reloadIfChanged: true
         inspector:
           group: document
       validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        TYPO3.Neos/Validation/NotEmptyValidator: {  }
     lastName:
       type: string
       ui:
-        label: 'Nachname'
-        reloadIfChanged: TRUE
+        label: Nachname
+        reloadIfChanged: true
         inspector:
           group: document
       validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        TYPO3.Neos/Validation/NotEmptyValidator: {  }
     email:
       type: string
       ui:
-        label: 'E-Mail'
-        reloadIfChanged: TRUE
+        label: E-Mail
+        reloadIfChanged: true
         inspector:
           group: document
       validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
-        'TYPO3.Neos/Validation/EmailAddressValidator': []
+        TYPO3.Neos/Validation/NotEmptyValidator: {  }
+        TYPO3.Neos/Validation/EmailAddressValidator: {  }
     listImage:
-      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
-        label: List Image
-        icon: 'icon-picture'
-        reloadIfChanged: TRUE
+        label: 'List Image'
+        icon: icon-picture
+        reloadIfChanged: true
         inspector:
           group: media
     mainImage:
-      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
-        label: Main Image
-        icon: 'icon-picture'
-        reloadIfChanged: TRUE
+        label: 'Main Image'
+        icon: icon-picture
+        reloadIfChanged: true
         inspector:
           group: media

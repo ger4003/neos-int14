@@ -1,28 +1,31 @@
+
 'Skail.Int14Ger:Role':
-  superTypes: ['TYPO3.Neos:Document']
+  superTypes:
+    'TYPO3.Neos:Document': true
   ui:
-    label: 'Rolle'
+    label: Rolle
     group: kv
-    icon: 'icon-group'
+    icon: icon-group
   properties:
     persons:
       type: references
       ui:
-        label: 'Persons'
-        reloadIfChanged: TRUE
+        label: Persons
+        reloadIfChanged: true
         inspector:
           group: document
           editorOptions:
-            nodeTypes: ['Skail.Int14Ger:Person']
+            nodeTypes:
+              - 'Skail.Int14Ger:Person'
     email:
       type: string
       ui:
-        label: 'E-Mail'
+        label: E-Mail
         inspector:
           group: document
       validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
-        'TYPO3.Neos/Validation/EmailAddressValidator': []
+        TYPO3.Neos/Validation/NotEmptyValidator: {  }
+        TYPO3.Neos/Validation/EmailAddressValidator: {  }
     emailAlias:
       type: string
       ui:
@@ -30,7 +33,7 @@
         inspector:
           group: document
       validation:
-        'TYPO3.Neos/Validation/EmailAddressValidator': []
+        TYPO3.Neos/Validation/EmailAddressValidator: {  }
     isExecutiveCommittee:
       type: boolean
       ui:

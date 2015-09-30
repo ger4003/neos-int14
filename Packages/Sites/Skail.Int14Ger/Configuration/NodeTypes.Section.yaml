@@ -1,15 +1,17 @@
+
 'Skail.Int14Ger:Section':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': true
   childNodes:
-    'content':
+    content:
       type: 'TYPO3.Neos:ContentCollection'
   ui:
     label: 'Section für Inhalte'
-    group: 'structure'
+    group: structure
   properties:
     title:
       type: string
-      defaultValue: 'Section'
+      defaultValue: Section
     noTopPadding:
       type: boolean
       ui:

@@ -1,19 +1,21 @@
+
 'Skail.Int14Ger:EventList':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': true
   ui:
-    label: 'Veranstaltungsliste'
-    icon: 'icon-calendar'
+    label: Veranstaltungsliste
+    icon: icon-calendar
     group: kv
   properties:
     title:
-      defaultValue: 'Veranstaltungsliste'
+      defaultValue: Veranstaltungsliste
     type:
       type: string
       ui:
-        label: 'Veranstaltungstyp'
-        reloadIfChanged: TRUE
+        label: Veranstaltungstyp
+        reloadIfChanged: true
         inspector:
-          group: 'content'
+          group: content
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Wähle ...'
@@ -21,50 +23,49 @@
               '':
                 label: ''
               'Skail.Int14Ger:Event':
-                label: 'alle'
+                label: alle
               'Skail.Int14Ger:Regatta':
-                label: 'Regatta'
+                label: Regatta
     orderBy:
       type: string
       ui:
         label: 'Sortieren nach'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'content'
+          group: content
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Wähle eine Eigenschaft'
             values:
               '':
                 label: ''
-              'startDate':
-                label: 'Startdatum'
-              'title':
-                label: 'Titel'
+              startDate:
+                label: Startdatum
+              title:
+                label: Titel
     limit:
       type: integer
       defaultValue: 3
       ui:
         label: 'Anzahl (0 für alle)'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'content'
-
+          group: content
     viewMorePage:
       type: reference
       ui:
         label: '"Mehr anzeigen" Link'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'content'
+          group: content
           editorOptions:
-            nodeTypes: ['TYPO3.Neos.NodeTypes:Page']
-
+            nodeTypes:
+              - 'TYPO3.Neos.NodeTypes:Page'
     viewMoreText:
       type: string
       defaultValue: 'Alle anzeigen'
       ui:
         label: '"Mehr anzeigen" Link-Text'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'content'
+          group: content

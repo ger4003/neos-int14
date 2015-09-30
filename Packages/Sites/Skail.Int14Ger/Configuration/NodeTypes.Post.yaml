@@ -1,7 +1,7 @@
 
 'Skail.Int14Ger:Post':
   superTypes:
-    - 'TYPO3.Neos:Document'
+    'TYPO3.Neos:Document': true
   ui:
     label: 'Blog Post'
     group: blog

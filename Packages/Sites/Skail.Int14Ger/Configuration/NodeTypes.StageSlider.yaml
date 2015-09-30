@@ -1,17 +1,19 @@
+
 'Skail.Int14Ger:StageSlider':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': true
   childNodes:
     sliderItems:
       type: 'TYPO3.Neos:ContentCollection'
       constraints:
         nodeTypes:
-          'Skail.Int14Ger:StageSliderImage': TRUE
-          '*': FALSE
+          'Skail.Int14Ger:StageSliderImage': true
+          '*': false
   ui:
     label: 'Stage Slider'
-    group: 'plugins'
-    icon: 'icon-picture'
-    inlineEditable: TRUE
+    group: plugins
+    icon: icon-picture
+    inlineEditable: true
   properties:
     title:
       defaultValue: 'Stage Slider'

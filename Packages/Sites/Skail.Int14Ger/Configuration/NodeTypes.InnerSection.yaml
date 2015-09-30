@@ -1,25 +1,27 @@
+
 'Skail.Int14Ger:InnerSection':
-  superTypes: ['Skail.Int14Ger:Section']
+  superTypes:
+    'Skail.Int14Ger:Section': true
   ui:
     label: 'Section mit Hintergrund'
   properties:
     title:
-      defaultValue: 'InnerSection'
+      defaultValue: InnerSection
     backgroundImage:
-      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
-        label: "Hintergrundbild"
-        icon: 'icon-picture'
-        reloadIfChanged: TRUE
+        label: Hintergrundbild
+        icon: icon-picture
+        reloadIfChanged: true
         inspector:
-          group: 'content'
+          group: content
           editorOptions:
             features:
-              crop: TRUE
+              crop: true
             crop:
               aspectRatio:
                 options:
                   fullHD:
-                    label: 'Inner-Section-Image'
-                  square: ~
-                allowCustom: FALSE
+                    label: Inner-Section-Image
+                  square: null
+                allowCustom: false

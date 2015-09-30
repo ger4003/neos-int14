@@ -1,5 +1,8 @@
+
 'Skail.Int14Ger:BoatAd':
-  superTypes: ['TYPO3.Neos:Document', 'Skail.Int14Ger:ListMixin']
+  superTypes:
+    'TYPO3.Neos:Document': true
+    'Skail.Int14Ger:ListMixin': true
   childNodes:
     main:
       type: 'TYPO3.Neos:ContentCollection'
@@ -10,73 +13,71 @@
   ui:
     label: 'Gebrauchtboot Anzeige'
     group: kv
-    icon: 'icon-calendar'
+    icon: icon-calendar
   properties:
     layout:
       type: string
-      defaultValue: 'detailPage'
+      defaultValue: detailPage
       ui:
         inspector:
-          group: 'visibility'
+          group: visibility
     title:
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         inspector:
           position: 5
     uriPathSegment:
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         inspector:
           position: 10
     price:
       type: string
       defaultValue: 0
       ui:
-        label: 'Preis'
-        reloadIfChanged: TRUE
+        label: Preis
+        reloadIfChanged: true
         inspector:
-          group: 'document'
+          group: document
           position: 20
     hasTfoil:
       type: boolean
-      defaultValue: TRUE
+      defaultValue: true
       ui:
         label: 'T-Foil vorhanden?'
         inspector:
           group: document
           position: 30
     backgroundImage:
-      type: 'TYPO3\Media\Domain\Model\ImageInterface'
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Hintergrundbild 1920x310'
-        icon: 'icon-picture'
-        reloadIfChanged: TRUE
+        icon: icon-picture
+        reloadIfChanged: true
         inspector:
-          group: 'document'
+          group: document
           position: 40
-
-
     yearBuild:
       type: string
       defaultValue: 'Baujahr eingeben...'
       ui:
-        label: 'Baujahr'
-        inlineEditable: TRUE
+        label: Baujahr
+        inlineEditable: true
     hull:
       type: string
       defaultValue: 'Rumpfdesign eingeben...'
       ui:
-        label: 'Rumpfdesign'
-        inlineEditable: TRUE
+        label: Rumpfdesign
+        inlineEditable: true
     mast:
       type: string
       defaultValue: 'Mastdesign eingeben...'
       ui:
-        label: 'Mastdesign'
-        inlineEditable: TRUE
+        label: Mastdesign
+        inlineEditable: true
     location:
       type: string
       defaultValue: 'Standort eingeben...'
       ui:
-        label: 'Standort'
-        inlineEditable: TRUE
+        label: Standort
+        inlineEditable: true

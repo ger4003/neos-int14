@@ -3,136 +3,120 @@
 # to your pages. You can add as many areas as you like, still
 # only those that are rendered in your TypoScript and Template
 # are visible on your page.
----
-#'TYPO3.Neos.NodeTypes:Page':
-#  childNodes:
-#    sidebar:
-#      type: 'TYPO3.Neos:ContentCollection'
 
-
-
-
-#
-# DocumentNodeTypes
-#
 'TYPO3.Neos:Document':
   ui:
-    label: 'Seite'
+    label: Seite
     inspector:
       groups:
         media:
           label: 'Media options'
           position: 20
-
 'TYPO3.Neos.NodeTypes:Page':
   childNodes:
     footer:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
-    'title':
+    title:
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         aloha:
-          'alignment': []
-          'format': []
-          'formatlesspaste':
-            button: FALSE
-    'hasMegaMenu':
+          alignment: {  }
+          format: {  }
+          formatlesspaste:
+            button: false
+    hasMegaMenu:
       type: boolean
       ui:
         label: 'Mega Menu aktivieren'
         inspector:
-          group: 'visibility'
-    'layout':
-      defaultValue: 'detailPage'
+          group: visibility
+    layout:
+      defaultValue: detailPage
       ui:
         inspector:
           editorOptions:
             values:
-              'landingPage':
+              landingPage:
                 label: 'Landing Page'
-              'detailPage':
+              detailPage:
                 label: 'Detail Page'
-
 'Skail.Int14Ger:DetailPage':
-  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  superTypes:
+    'TYPO3.Neos.NodeTypes:Page': true
   ui:
     label: 'Detail Page'
   properties:
-    'layout':
-      defaultValue: 'detailPage'
+    layout:
+      defaultValue: detailPage
       ui:
         inspector:
-          group: 'visibility'
-
+          group: visibility
 'Skail.Int14Ger:LandingPage':
-  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  superTypes:
+    'TYPO3.Neos.NodeTypes:Page': true
   childNodes:
     stage:
       type: 'TYPO3.Neos:ContentCollection'
       constraints:
         nodeTypes:
-          'Skail.Int14Ger:StageSlider': TRUE
-          '*': FALSE
+          'Skail.Int14Ger:StageSlider': true
+          '*': false
   ui:
     label: 'Landing Page'
   properties:
-    'layout':
-      defaultValue: 'landingPage'
+    layout:
+      defaultValue: landingPage
       ui:
         inspector:
-          group: 'visibility'
-    'stageText':
+          group: visibility
+    stageText:
       type: string
       defaultValue: 'Enter Text here ...'
       ui:
         label: 'Stage Text'
-        inlineEditable: TRUE
+        inlineEditable: true
         aloha:
-          'alignment': []
-          'format':
-            'u': TRUE
-            'b': TRUE
-            'i': TRUE
-            'p': FALSE
-            'h1': FALSE
-            'h2': FALSE
-            'h3': FALSE
-            'pre': FALSE
-            'removeFormat': FALSE
+          alignment: {  }
+          format:
+            u: true
+            b: true
+            i: true
+            p: false
+            h1: false
+            h2: false
+            h3: false
+            pre: false
+            removeFormat: false
         inspector:
           group: '~'
       validation:
-        'TYPO3.Neos/Validation/StringLengthValidator':
+        TYPO3.Neos/Validation/StringLengthValidator:
           minimum: 1
           maximum: 255
-    'showStageOverlay':
+    showStageOverlay:
       type: boolean
-      defaultValue: TRUE
+      defaultValue: true
       ui:
         label: 'Stage Overlay anzeigen'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'document'
-    'stageLink':
+          group: document
+    stageLink:
       type: reference
       ui:
         label: 'Stage Link'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'document'
-    'stageLinkText':
+          group: document
+    stageLinkText:
       type: string
       defaultValue: 'Enter Link Text...'
       ui:
         label: 'Stage Link Text'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'document'
-
-#
-# ContentNodeTypes
-#
+          group: document
 'TYPO3.Neos:Content':
   ui:
     inspector:
@@ -145,25 +129,20 @@
       type: string
       defaultValue: 'Enter Text here...'
       ui:
-        label: 'Title'
-        reloadIfChanged: TRUE
-        inlineEditable: TRUE
+        label: Title
+        reloadIfChanged: true
+        inlineEditable: true
         inspector:
           group: content
-
 'TYPO3.Neos.NodeTypes:Column':
   properties:
-    layout: [ ]
+    layout: {  }
     noBottomPadding:
       type: boolean
       ui:
         label: 'Unteren Rand entfernen'
         inspector:
-          group: 'column'
-
-#
-# Forms
-#
+          group: column
 'TYPO3.Neos.NodeTypes:Form':
   properties:
     formIdentifier:
@@ -171,7 +150,6 @@
         inspector:
           editorOptions:
             values:
-              '': ~
-              # Maps to the file Sites/Vendor.Site/Resources/Private/Form/contact-form.yaml
-              'contact-role-form':
+              '': null
+              contact-role-form:
                 label: 'Kontakt Formular (Ämter)'
