@@ -1,9 +1,11 @@
+
 'Skail.Int14Ger:Post':
-  superTypes: ['TYPO3.Neos:Document']
+  superTypes:
+    - 'TYPO3.Neos:Document'
   ui:
     label: 'Blog Post'
     group: blog
-    icon: 'icon-file-text'
+    icon: icon-file-text
   childNodes:
     main:
       type: 'TYPO3.Neos:ContentCollection'
@@ -14,30 +16,30 @@
       type: string
       defaultValue: 'Enter subtitle here or erase it.'
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
     datePublished:
-      type: date
+      type: DateTime
       ui:
         label: 'Publication Date'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: document
     author:
       type: reference
       ui:
-        label: 'Author'
+        label: Author
         inspector:
           group: document
     headerImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: TYPO3\Media\Domain\Model\ImageVariant
       ui:
-        label: Header Image
-        icon: 'icon-picture'
-        reloadIfChanged: TRUE
+        label: 'Header Image'
+        icon: icon-picture
+        reloadIfChanged: true
         inspector:
           group: media
     teaserImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: TYPO3\Media\Domain\Model\ImageVariant
       ui:
         label: 'Teaser Image'
         inspector:
@@ -46,16 +48,16 @@
       type: string
       defaultValue: 'Enter Teaser Text here ...'
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
     topics:
       type: references
       ui:
-        label: 'Topics'
+        label: Topics
         inspector:
           group: moreinfo
     tags:
       type: string
       ui:
-        label: 'Tags'
+        label: Tags
         inspector:
           group: moreinfo

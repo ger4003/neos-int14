@@ -1,20 +1,22 @@
+
 'Skail.Int14Ger:Event':
-  superTypes: ['TYPO3.Neos:Document']
+  superTypes:
+    - 'TYPO3.Neos:Document'
   childNodes:
-    'main':
+    main:
       type: 'TYPO3.Neos:ContentCollection'
-    'aside':
+    aside:
       type: 'TYPO3.Neos:ContentCollection'
-    'beneath':
+    beneath:
       type: 'TYPO3.Neos:ContentCollection'
   ui:
-    label: 'Veranstaltung'
+    label: Veranstaltung
     group: kv
-    icon: 'icon-calendar'
+    icon: icon-calendar
   properties:
     title:
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         inspector:
           position: 10
     uriPathSegment:
@@ -24,225 +26,225 @@
     description:
       type: string
       ui:
-        label: Kurze Beschreibung
+        label: 'Kurze Beschreibung'
         inspector:
           group: document
           position: 25
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editor: TYPO3.Neos/Inspector/Editors/TextAreaEditor
     startDate:
-      type: date
+      type: DateTime
       ui:
-        label: 'Startdatum'
-        reloadIfChanged: TRUE
+        label: Startdatum
+        reloadIfChanged: true
         inspector:
           group: document
           position: 30
           editorOptions:
             format: 'j. M Y - H:i'
       validation:
-        'TYPO3.Neos/Validation/DateTimeValidator': []
+        TYPO3.Neos/Validation/DateTimeValidator: {  }
     endDate:
-      type: date
+      type: DateTime
       ui:
-        label: 'Enddatum'
-        reloadIfChanged: TRUE
+        label: Enddatum
+        reloadIfChanged: true
         inspector:
           group: document
           position: 40
           editorOptions:
             format: 'j. M Y - H:i'
       validation:
-        'TYPO3.Neos/Validation/DateTimeValidator': []
+        TYPO3.Neos/Validation/DateTimeValidator: {  }
     organizer:
       type: string
       defaultValue: 'Name des Veranstalters'
       ui:
-        inlineEditable: TRUE
-        label: 'Veranstalter'
+        inlineEditable: true
+        label: Veranstalter
         inspector:
-          group: ~
+          group: null
     organizerLinkText:
       type: string
-      defaultValue: 'Linktext'
+      defaultValue: Linktext
       ui:
-        label: 'OrganizerLinktext'
+        label: OrganizerLinktext
         inspector:
-          group: ~
+          group: null
     organizerLink:
       type: string
       ui:
         label: 'Webseite des Veranstalters'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: document
-          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          editor: TYPO3.Neos/Inspector/Editors/LinkEditor
           editorOptions:
-            assets: FALSE
+            assets: false
             placeholder: 'Url einfügen'
     eventLinkText:
       type: string
-      defaultValue: 'Event-Homepage'
+      defaultValue: Event-Homepage
       ui:
-        label: 'EventLinktext'
+        label: EventLinktext
         inspector:
-          group: ~
+          group: null
     eventLink:
       type: string
       ui:
         label: 'Link zur Veranstaltungswebseite'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: document
-          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          editor: TYPO3.Neos/Inspector/Editors/LinkEditor
           editorOptions:
-            assets: FALSE
+            assets: false
             placeholder: 'Url einfügen'
     street:
       type: string
       defaultValue: 'Strasse und Hausnummer'
       ui:
-        label: 'Strasse'
-        inlineEditable: TRUE
+        label: Strasse
+        inlineEditable: true
         inspector:
-          group: ~
+          group: null
     zip:
       type: string
-      defaultValue: 'PLZ'
+      defaultValue: PLZ
       ui:
-        label: 'PLZ'
-        inlineEditable: TRUE
+        label: PLZ
+        inlineEditable: true
         inspector:
-          group: ~
+          group: null
     city:
       type: string
-      defaultValue: 'Stadt'
+      defaultValue: Stadt
       ui:
-        label: 'Stadt'
-        inlineEditable: TRUE
+        label: Stadt
+        inlineEditable: true
         inspector:
-          group: ~
+          group: null
     country:
       type: string
-      defaultValue: 'Land'
+      defaultValue: Land
       ui:
-        label: 'Land'
-        inlineEditable: TRUE
+        label: Land
+        inlineEditable: true
         inspector:
-          group: ~
+          group: null
     phone:
       type: string
       defaultValue: '+00 (0000) 000000'
       ui:
-        label: 'Telefon'
-        inlineEditable: TRUE
+        label: Telefon
+        inlineEditable: true
         inspector:
-          group: ~
+          group: null
     fax:
       type: string
       defaultValue: '+00 (0000) 000000'
       ui:
-        label: 'Fax'
-        inlineEditable: TRUE
+        label: Fax
+        inlineEditable: true
         inspector:
-          group: ~
+          group: null
     email:
       type: string
       ui:
-        label: 'E-Mail'
-        reloadIfChanged: TRUE
+        label: E-Mail
+        reloadIfChanged: true
         inspector:
           group: document
       validation:
-        'TYPO3.Neos/Validation/EmailAddressValidator': []
+        TYPO3.Neos/Validation/EmailAddressValidator: {  }
     mainImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: TYPO3\Media\Domain\Model\ImageVariant
       ui:
-        label: Bild (800x320)
-        reloadIfChanged: TRUE
-        icon: 'icon-picture'
+        label: 'Bild (800x320)'
+        reloadIfChanged: true
+        icon: icon-picture
         inspector:
           group: media
           editorOptions:
             features:
-              crop: TRUE
+              crop: true
             crop:
               aspectRatio:
                 options:
-                  square: ~
-                  fourFive: ~
-                  fiveSeven: ~
-                  twoThree: ~
-                  fourThree: ~
-                  sixteenNine: ~
-                allowCustom: FALSE
+                  square: null
+                  fourFive: null
+                  fiveSeven: null
+                  twoThree: null
+                  fourThree: null
+                  sixteenNine: null
+                allowCustom: false
                 locked:
                   width: 800
                   height: 320
     locationAvatar:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: TYPO3\Media\Domain\Model\ImageVariant
       ui:
-        label: Bild des Veranstalters (60x60)
-        icon: 'icon-picture'
-        reloadIfChanged: TRUE
+        label: 'Bild des Veranstalters (60x60)'
+        icon: icon-picture
+        reloadIfChanged: true
         inspector:
           group: media
           editorOptions:
             features:
-              crop: TRUE
+              crop: true
             crop:
               aspectRatio:
                 options:
-                  fullHD: ~
-                  fourFive: ~
-                  fiveSeven: ~
-                  twoThree: ~
-                  fourThree: ~
-                  sixteenNine: ~
-                allowCustom: TRUE
+                  fullHD: null
+                  fourFive: null
+                  fiveSeven: null
+                  twoThree: null
+                  fourThree: null
+                  sixteenNine: null
+                allowCustom: true
     listImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: TYPO3\Media\Domain\Model\ImageVariant
       ui:
-        label: Bild für Liste (130x130)
-        reloadIfChanged: FALSE
-        icon: 'icon-picture'
+        label: 'Bild für Liste (130x130)'
+        reloadIfChanged: false
+        icon: icon-picture
         inspector:
           group: media
           editorOptions:
             features:
-              crop: TRUE
+              crop: true
             crop:
               aspectRatio:
                 options:
-                  fourFive: ~
-                  fiveSeven: ~
-                  twoThree: ~
-                  fourThree: ~
-                  sixteenNine: ~
-                allowCustom: FALSE
+                  fourFive: null
+                  fiveSeven: null
+                  twoThree: null
+                  fourThree: null
+                  sixteenNine: null
+                allowCustom: false
                 locked:
                   width: 130
                   height: 130
     timelineImage:
-      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      type: TYPO3\Media\Domain\Model\ImageVariant
       ui:
-        label: Bild für Timeline (528x214)
-        reloadIfChanged: FALSE
-        icon: 'icon-picture'
+        label: 'Bild für Timeline (528x214)'
+        reloadIfChanged: false
+        icon: icon-picture
         inspector:
           group: media
           editorOptions:
             features:
-              crop: TRUE
+              crop: true
             crop:
               aspectRatio:
                 options:
-                  square: ~
-                  fourFive: ~
-                  fiveSeven: ~
-                  twoThree: ~
-                  fourThree: ~
-                  sixteenNine: ~
-                allowCustom: FALSE
+                  square: null
+                  fourFive: null
+                  fiveSeven: null
+                  twoThree: null
+                  fourThree: null
+                  sixteenNine: null
+                allowCustom: false
                 locked:
                   width: 528
                   height: 214

@@ -1,10 +1,12 @@
+
 'Skail.Int14Ger:Regatta':
-  superTypes: ['Skail.Int14Ger:Event']
+  superTypes:
+    - 'Skail.Int14Ger:Event'
   ui:
-    label: 'Regatta'
+    label: Regatta
   properties:
     startDate:
-      type: date
+      type: DateTime
       ui:
         inspector:
           editorOptions:
@@ -15,40 +17,40 @@
           editorOptions:
             format: 'j. M Y'
     entryClosingDate:
-      type: date
+      type: DateTime
       ui:
         label: 'Datum für Meldeschluss'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: document
           position: 60
           editorOptions:
             format: 'j. M Y'
         validation:
-          'TYPO3.Neos/Validation/DateTimeValidator': []
+          TYPO3.Neos/Validation/DateTimeValidator: {  }
     firstWarningSignal:
-      type: date
+      type: DateTime
       ui:
         label: 'Datum & Uhrzeit erster Start'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: document
           position: 50
           editorOptions:
             format: 'j. M Y - H:i'
         validation:
-          'TYPO3.Neos/Validation/DateTimeValidator': []
+          TYPO3.Neos/Validation/DateTimeValidator: {  }
     sailingArea:
       type: string
       defaultValue: 'Revier hier eintragen...'
       ui:
-        label: 'Segelrevier'
-        inlineEditable: TRUE
+        label: Segelrevier
+        inlineEditable: true
         inspector:
-          group: ~
+          group: null
         validation:
-          'TYPO3.Neos/Validation/NotEmptyValidator': []
-          'TYPO3.Neos/Validation/StringLengthValidator':
+          TYPO3.Neos/Validation/NotEmptyValidator: {  }
+          TYPO3.Neos/Validation/StringLengthValidator:
             minimum: 1
             maximum: 255
     entryFormLink:
@@ -57,33 +59,33 @@
         label: 'Link zum Meldeformular'
         inspector:
           group: document
-          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          editor: TYPO3.Neos/Inspector/Editors/LinkEditor
           editorOptions:
-            assets: TRUE
+            assets: true
             placeholder: 'Url einfügen, oder tippen für Suche nach internen Seiten'
     entryFormLinkText:
       type: string
-      defaultValue: 'Meldeformular'
+      defaultValue: Meldeformular
       ui:
         label: 'Link-Text Meldeformular'
-        inlineEditable: TRUE
+        inlineEditable: true
         inspector:
-          group: ~
+          group: null
     noticeOfRaceLink:
       type: string
       ui:
         label: 'Link zur Ausschreibung'
         inspector:
           group: document
-          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          editor: TYPO3.Neos/Inspector/Editors/LinkEditor
           editorOptions:
-            assets: TRUE
+            assets: true
             placeholder: 'Url einfügen, oder tippen für Suche nach internen Seiten'
     noticeOfRaceLinkText:
       type: string
-      defaultValue: 'Ausschreibung'
+      defaultValue: Ausschreibung
       ui:
         label: 'Link-Text Ausschreibung'
-        inlineEditable: TRUE
+        inlineEditable: true
         inspector:
-          group: ~
+          group: null
