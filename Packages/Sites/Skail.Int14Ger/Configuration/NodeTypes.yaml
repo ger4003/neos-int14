@@ -12,6 +12,7 @@
         media:
           label: 'Media options'
           position: 20
+
 'TYPO3.Neos.NodeTypes:Page':
   childNodes:
     footer:
@@ -32,15 +33,20 @@
         inspector:
           group: visibility
     layout:
-      defaultValue: detailPage
+      defaultValue: default
       ui:
         inspector:
+          group: visibility
+          position: 25
           editorOptions:
             values:
+              default:
+                label: 'Default Page'
               landingPage:
                 label: 'Landing Page'
               detailPage:
                 label: 'Detail Page'
+
 'Skail.Int14Ger:DetailPage':
   superTypes:
     'TYPO3.Neos.NodeTypes:Page': true
@@ -49,9 +55,7 @@
   properties:
     layout:
       defaultValue: detailPage
-      ui:
-        inspector:
-          group: visibility
+
 'Skail.Int14Ger:LandingPage':
   superTypes:
     'TYPO3.Neos.NodeTypes:Page': true
@@ -67,9 +71,6 @@
   properties:
     layout:
       defaultValue: landingPage
-      ui:
-        inspector:
-          group: visibility
     stageText:
       type: string
       defaultValue: 'Enter Text here ...'
@@ -117,6 +118,7 @@
         reloadIfChanged: true
         inspector:
           group: document
+
 'TYPO3.Neos:Content':
   ui:
     inspector:
@@ -134,6 +136,7 @@
         inlineEditable: true
         inspector:
           group: content
+
 'TYPO3.Neos.NodeTypes:Column':
   properties:
     layout: {  }
@@ -143,6 +146,7 @@
         label: 'Unteren Rand entfernen'
         inspector:
           group: column
+
 'TYPO3.Neos.NodeTypes:Form':
   properties:
     formIdentifier:
