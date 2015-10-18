@@ -18,6 +18,7 @@
     footer:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
+    layout: { }
     title:
       ui:
         inlineEditable: true
@@ -32,29 +33,12 @@
         label: 'Mega Menu aktivieren'
         inspector:
           group: visibility
-    layout:
-      defaultValue: default
-      ui:
-        inspector:
-          group: visibility
-          position: 25
-          editorOptions:
-            values:
-              default:
-                label: 'Default Page'
-              landingPage:
-                label: 'Landing Page'
-              detailPage:
-                label: 'Detail Page'
 
 'Skail.Int14Ger:DetailPage':
   superTypes:
     'TYPO3.Neos.NodeTypes:Page': true
   ui:
     label: 'Detail Page'
-  properties:
-    layout:
-      defaultValue: detailPage
 
 'Skail.Int14Ger:LandingPage':
   superTypes:
@@ -69,8 +53,6 @@
   ui:
     label: 'Landing Page'
   properties:
-    layout:
-      defaultValue: landingPage
     stageText:
       type: string
       defaultValue: 'Enter Text here ...'
@@ -139,7 +121,6 @@
 
 'TYPO3.Neos.NodeTypes:Column':
   properties:
-    layout: {  }
     noBottomPadding:
       type: boolean
       ui:

@@ -15,12 +15,6 @@
     group: kv
     icon: icon-calendar
   properties:
-    layout:
-      type: string
-      defaultValue: detailPage
-      ui:
-        inspector:
-          group: visibility
     title:
       ui:
         inlineEditable: true

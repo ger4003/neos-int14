@@ -1,3 +1,5 @@
 'TYPO3.Neos.NodeTypes:ThreeColumn':
   ui:
     label: 'Drei Spalten Inhalt'
+  properties:
+    layout: null

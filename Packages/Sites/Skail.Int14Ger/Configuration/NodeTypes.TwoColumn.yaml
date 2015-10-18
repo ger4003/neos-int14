@@ -1,3 +1,11 @@
 'TYPO3.Neos.NodeTypes:TwoColumn':
   ui:
     label: 'Zwei Spalten Inhalt'
+  properties:
+    layout:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              '75-25': null
+              '25-75': null

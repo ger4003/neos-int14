@@ -26,8 +26,13 @@
           position: 60
           editorOptions:
             format: 'j. M Y'
-        validation:
-          TYPO3.Neos/Validation/DateTimeValidator: {  }
+      validation:
+        TYPO3.Neos/Validation/DateTimeValidator: {  }
+      search:
+        elasticSearchMapping:
+          type: date
+          format: 'date_time_no_millis'
+        indexing: '${(value ? Date.format(value, "Y-m-d\TH:i:sP") : null)}'
     firstWarningSignal:
       type: DateTime
       ui:
@@ -38,8 +43,13 @@
           position: 50
           editorOptions:
             format: 'j. M Y - H:i'
-        validation:
-          TYPO3.Neos/Validation/DateTimeValidator: {  }
+      validation:
+        TYPO3.Neos/Validation/DateTimeValidator: {  }
+      search:
+        elasticSearchMapping:
+          type: date
+          format: 'date_time_no_millis'
+        indexing: '${(value ? Date.format(value, "Y-m-d\TH:i:sP") : null)}'
     sailingArea:
       type: string
       defaultValue: 'Revier hier eintragen...'
@@ -48,11 +58,11 @@
         inlineEditable: true
         inspector:
           group: null
-        validation:
-          TYPO3.Neos/Validation/NotEmptyValidator: {  }
-          TYPO3.Neos/Validation/StringLengthValidator:
-            minimum: 1
-            maximum: 255
+      validation:
+        TYPO3.Neos/Validation/NotEmptyValidator: {  }
+        TYPO3.Neos/Validation/StringLengthValidator:
+          minimum: 1
+          maximum: 255
     entryFormLink:
       type: string
       ui:

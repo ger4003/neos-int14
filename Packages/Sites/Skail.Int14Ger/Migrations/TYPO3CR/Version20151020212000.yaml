@@ -1,0 +1,30 @@
+up:
+  comments: 'This is a migration to remove the layout property from TYPO3.Neos.NodeTypes:Page nodeType.'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:Page'
+      transformations:
+        -
+          type: 'RemoveProperty'
+          settings:
+            property: 'layout'
+
+down:
+  comments: 'This is a migration to add the layout property to TYPO3.Neos.NodeTypes:Page nodeType.'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'TYPO3.Neos.NodeTypes:Page'
+      transformations:
+        -
+          type: 'AddNewProperty'
+          settings:
+            newPropertyName: 'layout'
+            value: 'default'

@@ -54,7 +54,7 @@ prototype(Skail.Int14Ger:DefaultPage) < prototype(Page) {
 	body {
 		templatePath = 'resource://Skail.Int14Ger/Private/Templates/Page/Default.html'
 		sectionName = 'body'
-		layout = ${q(node).property('layout') ? q(node).property('layout') : 'default'}
+		layout = 'default'
 		parts {
 			mainMenu = Menu {
 				entryLevel = 1
@@ -100,8 +100,11 @@ prototype(Skail.Int14Ger:DefaultPage) < prototype(Page) {
 }
 
 prototype(TYPO3.Neos.NodeTypes:Page.Document) < prototype(Skail.Int14Ger:DefaultPage)
+
 prototype(Skail.Int14Ger:LandingPage.Document) < prototype(Skail.Int14Ger:DefaultPage) {
 	body {
+		layout = 'landingPage'
+
 		// remove page header
 		parts.pageHeader >
 
@@ -119,8 +122,11 @@ prototype(Skail.Int14Ger:LandingPage.Document) < prototype(Skail.Int14Ger:Defaul
 		}
 	}
 }
+
 prototype(Skail.Int14Ger:DetailPage.Document) < prototype(Skail.Int14Ger:DefaultPage) {
 	body {
+		layout = 'detailPage'
+
 		parts {
 			pageHeader = TYPO3.TypoScript:Template {
 				templatePath = 'resource://Skail.Int14Ger/Private/Templates/TypoScriptObjects/DetailPageHeader.html'
