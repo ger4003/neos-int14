@@ -1,19 +1,19 @@
 
-'Skail.Int14Ger:EventList':
+'Skail.Int14Ger:AdList':
   superTypes:
     'TYPO3.Neos:Content': true
     'Skail.Int14Ger:RawTitleMixin': true
   ui:
-    label: Veranstaltungsliste
-    icon: icon-calendar
+    label: Anzeigenliste
+    icon: icon-eur
     group: kv
   properties:
     title:
-      defaultValue: Veranstaltungsliste
+      defaultValue: Anzeigenliste
     type:
       type: string
       ui:
-        label: Veranstaltungstyp
+        label: Anzeigen-Typ
         reloadIfChanged: true
         inspector:
           group: content
@@ -23,10 +23,10 @@
             values:
               '':
                 label: ''
-              'Skail.Int14Ger:Event':
+              'Skail.Int14Ger:Ad':
                 label: alle
-              'Skail.Int14Ger:Regatta':
-                label: Regatta
+              'Skail.Int14Ger:BoatAd':
+                label: Boot
     orderBy:
       type: string
       ui:
@@ -40,8 +40,8 @@
             values:
               '':
                 label: ''
-              startDate:
-                label: Startdatum
+              price:
+                label: Preis
               title:
                 label: Titel
     limit:

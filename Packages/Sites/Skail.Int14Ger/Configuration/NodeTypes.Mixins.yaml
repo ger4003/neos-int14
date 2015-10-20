@@ -5,12 +5,12 @@
       ui:
         aloha:
           'format':
-            'h1': FALSE
-            'h2': FALSE
-            'h3': TRUE
-            'h4': TRUE
-            'h5': TRUE
-            'h6': TRUE
+            'h1': false
+            'h2': false
+            'h3': true
+            'h4': true
+            'h5': true
+            'h6': true
 
 'TYPO3.Neos.NodeTypes:TextMixin':
   properties:
@@ -18,21 +18,39 @@
       ui:
         aloha:
           'format':
-            'h1': FALSE
-            'h2': FALSE
-            'h3': TRUE
-            'h4': TRUE
-            'h5': TRUE
-            'h6': TRUE
+            'h1': false
+            'h2': false
+            'h3': true
+            'h4': true
+            'h5': true
+            'h6': true
 
 'Skail.Int14Ger:ListMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     listImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
-        label: 'List Image'
-        icon: 'icon-picture'
+        label: 'Bild für Listenansicht'
+        reloadIfChanged: false
+        icon: icon-picture
         inspector:
-          group: 'document'
+          group: document
           position: 100
+
+'Skail.Int14Ger:RawTitleMixin':
+  properties:
+    title:
+      defaultValue: 'Überschrift hier eingeben'
+      ui:
+        aloha:
+          'format': { }
+          'table': { }
+          'link': { }
+          'list': { }
+          'alignment': { }
+          'formatlesspaste':
+            'button': false
+            'formatlessPasteOption': false
+          'autoparagraph ': false
+          'placeholder': ''

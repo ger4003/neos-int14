@@ -2,9 +2,10 @@
 'Skail.Int14Ger:RoleList':
   superTypes:
     'TYPO3.Neos:Content': true
+    'Skail.Int14Ger:RawTitleMixin': true
   ui:
     label: Rollenliste
-    icon: icon-group
+    icon: icon-briefcase
     group: kv
   properties:
     title:

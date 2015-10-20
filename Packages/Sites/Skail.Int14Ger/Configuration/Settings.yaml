@@ -19,6 +19,12 @@ TYPO3:
           label: 'Klassenvereinigung'
 
     userInterface:
+      translation:
+        autoInclude:
+          'Skail.Int14Ger': ['NodeTypes/*']
+
+      defaultLanguage: 'de'
+
       inspector:
         dataTypes:
           'TYPO3\Media\Domain\Model\ImageInterface':

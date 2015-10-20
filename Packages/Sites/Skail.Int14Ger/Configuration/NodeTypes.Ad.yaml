@@ -1,0 +1,54 @@
+
+'Skail.Int14Ger:Ad':
+  abstract: TRUE
+  superTypes:
+    'TYPO3.Neos:Document': true
+    'Skail.Int14Ger:ListMixin': true
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
+    aside:
+      type: 'TYPO3.Neos:ContentCollection'
+    beneath:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: Anzeige
+    group: kv
+    icon: icon-eur
+  properties:
+    title:
+      ui:
+        inlineEditable: true
+        inspector:
+          position: 5
+    uriPathSegment:
+      ui:
+        inlineEditable: true
+        inspector:
+          position: 10
+    price:
+      type: string
+      defaultValue: 0
+      ui:
+        label: Preis
+        reloadIfChanged: true
+        inspector:
+          group: document
+          position: 20
+    backgroundImage:
+      type: TYPO3\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Hintergrundbild (1920x310)'
+        icon: icon-picture
+        reloadIfChanged: true
+        inspector:
+          group: document
+          position: 40
+          editorOptions:
+            features:
+              crop: true
+            crop:
+              aspectRatio:
+                locked:
+                  width: 1920
+                  height: 310

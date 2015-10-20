@@ -5,7 +5,7 @@
   ui:
     label: 'Int 14 Team'
     group: kv
-    icon: icon-book
+    icon: icon-gamepad
   properties:
     sailnumber:
       type: string

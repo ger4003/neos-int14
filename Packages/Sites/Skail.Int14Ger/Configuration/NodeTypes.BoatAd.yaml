@@ -1,39 +1,12 @@
 
 'Skail.Int14Ger:BoatAd':
   superTypes:
-    'TYPO3.Neos:Document': true
-    'Skail.Int14Ger:ListMixin': true
-  childNodes:
-    main:
-      type: 'TYPO3.Neos:ContentCollection'
-    aside:
-      type: 'TYPO3.Neos:ContentCollection'
-    beneath:
-      type: 'TYPO3.Neos:ContentCollection'
+    'Skail.Int14Ger:Ad': true
   ui:
-    label: 'Gebrauchtboot Anzeige'
+    label: i18n
     group: kv
-    icon: icon-calendar
+    icon: icon-eur
   properties:
-    title:
-      ui:
-        inlineEditable: true
-        inspector:
-          position: 5
-    uriPathSegment:
-      ui:
-        inlineEditable: true
-        inspector:
-          position: 10
-    price:
-      type: string
-      defaultValue: 0
-      ui:
-        label: Preis
-        reloadIfChanged: true
-        inspector:
-          group: document
-          position: 20
     hasTfoil:
       type: boolean
       defaultValue: true
@@ -42,15 +15,6 @@
         inspector:
           group: document
           position: 30
-    backgroundImage:
-      type: TYPO3\Media\Domain\Model\ImageInterface
-      ui:
-        label: 'Hintergrundbild 1920x310'
-        icon: icon-picture
-        reloadIfChanged: true
-        inspector:
-          group: document
-          position: 40
     yearBuild:
       type: string
       defaultValue: 'Baujahr eingeben...'

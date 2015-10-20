@@ -5,7 +5,7 @@
   ui:
     label: Rolle
     group: kv
-    icon: icon-group
+    icon: icon-briefcase
   properties:
     persons:
       type: references

@@ -1,0 +1,25 @@
+#
+# Role list rendering
+#
+prototype(Skail.Int14Ger:AdList) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/AdList.html'
+	listItems = TYPO3.TypoScript:Collection {
+		type = ${q(node).property('type') ? q(node).property('type') : ''}
+		limit = ${q(node).property('limit')}
+		orderBy = ${q(node).property('orderBy') ? q(node).property('orderBy') : 'startDate'}
+		collection = ${Search.query(site).nodeType(this.type).sortAsc(this.orderBy).limit(this.limit).execute()}
+		itemName = 'ad'
+		itemRenderer = Skail.Int14Ger:AdListItem
+		iterationName = 'iterator'
+
+		@cache.mode = 'cached'
+	}
+}
+
+prototype(Skail.Int14Ger:AdListItem) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/AdList.html'
+	sectionName = 'listItem'
+
+	ad = ${ad}
+	adIterator = ${iterator}
+}
