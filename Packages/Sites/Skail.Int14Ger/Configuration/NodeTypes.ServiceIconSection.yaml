@@ -1,0 +1,13 @@
+'Skail.Int14Ger:ServiceIconSection':
+  superTypes:
+    'TYPO3.Neos:Content': true
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: Service Icon Section
+    icon: icon-tags
+    group: kv
+  properties:
+    title:
+      defaultValue: Service Icon Section

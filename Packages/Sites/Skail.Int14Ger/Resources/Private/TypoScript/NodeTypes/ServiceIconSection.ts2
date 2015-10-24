@@ -1,0 +1,9 @@
+prototype(Skail.Int14Ger:ServiceIconSection) {
+	attributes.class = 'full-width-bg blue-gradient-bg normal-padding alternate-slider-bg marine-main-top-iconbox'
+
+	content = TYPO3.Neos:ContentCollection {
+		tagName = 'div'
+		nodePath = 'content'
+		attributes.class = 'row'
+	}
+}

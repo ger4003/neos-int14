@@ -1,0 +1,23 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div class="col-lg-3 col-md-3 col-sm-6">
+	<div class="service style1">
+		<f:if condition="{backend}">
+			<f:then>
+				<f:render section="serviceIcon" arguments="{_all}" />
+			</f:then>
+			<f:else>
+				<neos:link.node node="{link}">
+					<f:render section="serviceIcon" arguments="{_all}" />
+				</neos:link.node>
+			</f:else>
+		</f:if>
+	</div>
+</div>
+
+<f:section name="serviceIcon">
+	<div class="service-icon">
+		<i class="icons {icon}"></i>
+	</div>
+	{neos:contentElement.editable(property: 'title', tag: 'h3')}
+	<div class="content_box">{neos:contentElement.editable(property: 'description', tag: 'span')}</div>
+</f:section>

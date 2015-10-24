@@ -1,0 +1,25 @@
+'Skail.Int14Ger:ServiceIcon':
+  superTypes:
+    'TYPO3.Neos:Content': true
+    'Skail.Int14Ger:IconMixin': true
+  ui:
+    label: Service Icon
+    icon: icon-tag
+    group: kv
+  properties:
+    description:
+      type: string
+      ui:
+        label: Beschreibung
+        inspector:
+          group: content
+
+    link:
+      type: reference
+      ui:
+        label: 'Link'
+        inspector:
+          group: content
+          editorOptions:
+            nodeTypes:
+              - 'TYPO3.Neos.NodeTypes:Page'

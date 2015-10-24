@@ -1911,7 +1911,7 @@
         }
         
     	function sliderAlternativeOverlay(){
-    		$('.alternate-slider-bg').each(function(){
+    		$('.alternate-slider-bg').filter(':not(.skail-int14ger-serviceiconsection)').each(function(){
     			
     			if(window_w > 991){
     				var el_h = $(this).innerHeight();

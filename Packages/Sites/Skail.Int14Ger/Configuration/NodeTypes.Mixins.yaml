@@ -54,3 +54,40 @@
             'formatlessPasteOption': false
           'autoparagraph ': false
           'placeholder': ''
+
+'Skail.Int14Ger:IconMixin':
+  properties:
+    icon:
+      type: string
+      defaultValue: 'icon-compass'
+      ui:
+        label: 'Icon'
+        reloadIfChanged: true
+        inspector:
+          group: content
+          position: 10
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'Wähle ...'
+            values:
+              'icon-waves-outline':
+                label: Wellen
+                icon: 'icon-waves-outline'
+              'icon-calendar':
+                label: Kalender
+                icon: 'icon-calendar'
+              'icon-compass':
+                label: Kompass
+                icon: 'icon-compass'
+              'icon-link-ext':
+                label: Externer Link
+                icon: 'icon-external-link-sign'
+              'icon-flag':
+                label: Flagge
+                icon: 'icon-flag'
+              'icon-briefcase-1':
+                label: Koffer
+                icon: 'icon-briefcase'
+              'icon-book':
+                label: Buch
+                icon: 'icon-book'
