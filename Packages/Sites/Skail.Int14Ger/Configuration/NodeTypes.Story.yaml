@@ -1,0 +1,15 @@
+'Skail.Int14Ger:Story':
+  superTypes:
+    'Skail.Int14Ger:Post': true
+  ui:
+    label: 'Regattabericht'
+  properties:
+    event:
+      type: reference
+      ui:
+        label: Regatta
+        inspector:
+          group: document
+          editorOptions:
+            nodeTypes:
+              - 'Skail.Int14Ger:Regatta'

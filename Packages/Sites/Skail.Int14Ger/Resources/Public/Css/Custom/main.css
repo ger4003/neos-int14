@@ -63,3 +63,13 @@ span.read-more {
 }
 
 
+/* font size */
+#main-nav>li>a,
+#header div.menu>ul>li>a {
+    font-size:12px;
+}
+
+#main-nav li ul li a,
+#header div.menu>ul li ul li a {
+    font-size:12px;
+}

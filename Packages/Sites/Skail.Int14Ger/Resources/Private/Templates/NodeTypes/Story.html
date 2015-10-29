@@ -1,0 +1,68 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+<div>
+	<div>
+		<figure{f:if(condition: imageClassName, then: ' class="{imageClassName}"')}>
+		<f:if condition="{headerImage}">
+			<f:then>
+				<media:image asset="{headerImage}" alt="{headerImage.title}" title="{headerImage.title}" maximumWidth="1000" maximumHeight="350" />
+			</f:then>
+			<f:else>
+				<f:security.ifAccess privilegeTarget="TYPO3_Neos_Backend_GeneralAccess">
+					<f:if condition="{node.context.workspace.name} != 'live'">
+						<img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.png')}" title="Dummy image" alt="Dummy image" class="neos-handle" />
+					</f:if>
+				</f:security.ifAccess>
+			</f:else>
+		</f:if>
+		<f:if condition="{hasCaption}">
+			<figcaption>
+				{neos:contentElement.editable(property: 'caption', node: node)}
+			</figcaption>
+		</f:if>
+		</figure>
+	</div>
+
+	<div class="hgroup">
+		<hgroup>
+			<f:if condition="{renderPreview}">
+				<f:then>
+					<h2><neos:link.node node="{node}">{title}</neos:link.node></h2>
+					<f:if condition="{subtitle}">
+						<h3>{subtitle}</h3>
+					</f:if>
+				</f:then>
+				<f:else>
+					<f:comment>Hide empty subtitle outside Neos backend</f:comment>
+					<f:if condition="{node.context.workspace.name} != 'live'">
+						<f:then>
+							<h1>{neos:contentElement.editable(property: 'title')}</h1>
+							<h2>{neos:contentElement.editable(property: 'subtitle')}</h2>
+						</f:then>
+						<f:else>
+							<h1>{title}</h1>
+							<f:if condition="{subtitle}">
+								<h2>{subtitle}</h2>
+							</f:if>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+		</hgroup>
+
+		<f:if condition="{node.context.workspace.name} != 'live'">
+			<f:then>
+				<p>{neos:contentElement.editable(property: 'teaser')}</p>
+			</f:then>
+			<f:else>
+				<f:if condition="{teaser}">
+					<p>{teaser}</p>
+				</f:if>
+			</f:else>
+		</f:if>
+
+		<p>Autor: {author}</p>
+		<p>Datum: {datePublished -> f:format.date(format: 'd.m.Y')}</p>
+	</div>
+</div>
+{main -> f:format.raw()}

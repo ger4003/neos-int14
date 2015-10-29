@@ -1,10 +1,9 @@
-
 'Skail.Int14Ger:Post':
   superTypes:
     'TYPO3.Neos:Document': true
   ui:
     label: 'Blog Post'
-    group: blog
+    group: kv
     icon: icon-file-text
   childNodes:
     main:
@@ -24,12 +23,24 @@
         reloadIfChanged: true
         inspector:
           group: document
+          editorOptions:
+            format: 'j. M Y'
+      validation:
+        TYPO3.Neos/Validation/DateTimeValidator: {  }
+      search:
+        elasticSearchMapping:
+          type: date
+          format: 'date_time_no_millis'
+        indexing: '${(value ? Date.format(value, "Y-m-d\TH:i:sP") : null)}'
     author:
       type: reference
       ui:
         label: Author
         inspector:
           group: document
+          editorOptions:
+            nodeTypes:
+              - 'Skail.Int14Ger:Person'
     headerImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:

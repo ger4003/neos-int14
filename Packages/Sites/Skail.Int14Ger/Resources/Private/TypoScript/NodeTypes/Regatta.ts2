@@ -9,4 +9,14 @@ prototype(Skail.Int14Ger:Regatta.Document) < prototype(Skail.Int14Ger:Event.Docu
 prototype(Skail.Int14Ger:Regatta) < prototype(Skail.Int14Ger:Event) {
 	noticeOfRaceLink.@process.convertUris = TYPO3.Neos:ConvertUris
 	entryFormLink.@process.convertUris = TYPO3.Neos:ConvertUris
+
+	# render content of associated story
+	@context.storyNodes = ${Search.query(site).nodeType('Skail.Int14Ger:Story').exactMatch('event', node).execute()}
+	storyNode = ${storyNodes[0]}
+	storyContent = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+
+		@context.node = ${Neos.Node.nearestContentCollection(storyNodes[0], this.nodePath)}
+	}
+
 }

@@ -130,6 +130,10 @@
 							</div>
 							<div class="clearfix clearfix-height30"></div>
 							{main -> f:format.raw()}
+
+							<h3>{storyNode.properties.title}</h3>
+							<h4>{storyNode.properties.author.properties.title} {storyNode.properties.author.properties.email}</h4>
+							{storyContent -> f:format.raw()}
 							<!-- /Post Content -->
 						</div>
 					</div>
@@ -141,5 +145,6 @@
 	<aside class="sidebar col-lg-3 col-md-4 col-sm-4">
 		{contactInfo -> f:format.raw()}
 		{aside -> f:format.raw()}
+
 	</aside>
 </div>

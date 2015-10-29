@@ -1,0 +1,14 @@
+#
+# Blog post rendering
+#
+prototype(Skail.Int14Ger:Story.Document) < prototype(Skail.Int14Ger:DefaultPage) {
+	body.renderHeader = FALSE
+	body.content.main = Skail.Int14Ger:Story
+}
+
+prototype(Skail.Int14Ger:Story) < prototype(TYPO3.Neos:Content) {
+	// The full main content collection (editable)
+	main = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+	}
+}
