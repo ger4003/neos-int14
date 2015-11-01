@@ -1,0 +1,34 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<div>
+	<p>{email}</p>
+
+	<f:if condition="{subRoles}">
+		<f:then>
+			<ul>
+				<f:for each="{subRoles}" as="subRole">
+					<li>
+						<neos:link.node node="{subRole}">{subRole.properties.title}</neos:link.node>
+						<f:render partial="Role/Person" arguments="{person: subRole.properties.persons.0}" />
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<f:if condition="{persons -> f:count()} > 1">
+				<f:then>
+					<ul>
+						<f:for each="{persons}" as="person">
+							<li>
+								<f:render partial="Role/Person" arguments="{person: person}" />
+							</li>
+						</f:for>
+					</ul>
+				</f:then>
+				<f:else>
+					<f:render partial="Role/Person" arguments="{person: persons.0}" />
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+</div>

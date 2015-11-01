@@ -1,0 +1,9 @@
+#
+# Team rendering
+#
+prototype(Skail.Int14Ger:Team.Document) < prototype(Skail.Int14Ger:DefaultPage) {
+	body.renderHeader = FALSE
+	body.content.main =  Skail.Int14Ger:Team
+}
+
+prototype(Skail.Int14Ger:Team) < prototype(TYPO3.Neos:Content)

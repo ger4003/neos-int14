@@ -1,0 +1,11 @@
+#
+# Role rendering
+#
+prototype(Skail.Int14Ger:Role.Document) < prototype(Skail.Int14Ger:DefaultPage) {
+	body.renderHeader = FALSE
+	body.content.main =  Skail.Int14Ger:Role
+}
+
+prototype(Skail.Int14Ger:Role) < prototype(TYPO3.Neos:Content) {
+	subRoles = ${q(node).children('[instanceof Skail.Int14Ger:Role]')}
+}

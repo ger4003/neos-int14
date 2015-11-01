@@ -1,0 +1,15 @@
+{namespace media=TYPO3\Media\ViewHelpers}
+
+<p>{person.properties.title}</p>
+<f:if condition="{person.properties.mainImage}">
+	<media:image asset="{person.properties.mainImage}" alt="" title="" maximumWidth="1000" maximumHeight="350" />
+</f:if>
+
+<dl>
+	<dt>Vorname:</dt>
+	<dd>{person.properties.firstName}</dd>
+	<dt>Nachname:</dt>
+	<dd>{person.properties.lastName}</dd>
+	<dt>E-Mail:</dt>
+	<dd>{person.properties.email}</dd>
+</dl>

@@ -1,0 +1,51 @@
+'Skail.Int14Ger:Person':
+  superTypes: ['TYPO3.Neos:Document']
+  ui:
+    label: 'Person'
+    group: kv
+    icon: 'icon-user'
+  properties:
+    firstName:
+      type: string
+      ui:
+        label: 'Vorname'
+        reloadIfChanged: TRUE
+        inspector:
+          group: document
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+    lastName:
+      type: string
+      ui:
+        label: 'Nachname'
+        reloadIfChanged: TRUE
+        inspector:
+          group: document
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+    email:
+      type: string
+      ui:
+        label: 'E-Mail'
+        reloadIfChanged: TRUE
+        inspector:
+          group: document
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        'TYPO3.Neos/Validation/EmailAddressValidator': []
+    listImage:
+      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      ui:
+        label: List Image
+        icon: 'icon-picture'
+        reloadIfChanged: TRUE
+        inspector:
+          group: media
+    mainImage:
+      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      ui:
+        label: Main Image
+        icon: 'icon-picture'
+        reloadIfChanged: TRUE
+        inspector:
+          group: media

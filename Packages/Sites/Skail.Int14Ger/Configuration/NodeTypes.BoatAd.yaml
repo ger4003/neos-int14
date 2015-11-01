@@ -1,0 +1,82 @@
+'Skail.Int14Ger:BoatAd':
+  superTypes: ['TYPO3.Neos:Document', 'Skail.Int14Ger:ListMixin']
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
+    aside:
+      type: 'TYPO3.Neos:ContentCollection'
+    beneath:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Gebrauchtboot Anzeige'
+    group: kv
+    icon: 'icon-calendar'
+  properties:
+    layout:
+      type: string
+      defaultValue: 'detailPage'
+      ui:
+        inspector:
+          group: 'visibility'
+    title:
+      ui:
+        inlineEditable: TRUE
+        inspector:
+          position: 5
+    uriPathSegment:
+      ui:
+        inlineEditable: TRUE
+        inspector:
+          position: 10
+    price:
+      type: string
+      defaultValue: 0
+      ui:
+        label: 'Preis'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+          position: 20
+    hasTfoil:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'T-Foil vorhanden?'
+        inspector:
+          group: document
+          position: 30
+    backgroundImage:
+      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      ui:
+        label: 'Hintergrundbild 1920x310'
+        icon: 'icon-picture'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+          position: 40
+
+
+    yearBuild:
+      type: string
+      defaultValue: 'Baujahr eingeben...'
+      ui:
+        label: 'Baujahr'
+        inlineEditable: TRUE
+    hull:
+      type: string
+      defaultValue: 'Rumpfdesign eingeben...'
+      ui:
+        label: 'Rumpfdesign'
+        inlineEditable: TRUE
+    mast:
+      type: string
+      defaultValue: 'Mastdesign eingeben...'
+      ui:
+        label: 'Mastdesign'
+        inlineEditable: TRUE
+    location:
+      type: string
+      defaultValue: 'Standort eingeben...'
+      ui:
+        label: 'Standort'
+        inlineEditable: TRUE

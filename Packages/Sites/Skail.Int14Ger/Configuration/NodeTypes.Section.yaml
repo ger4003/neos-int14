@@ -1,0 +1,18 @@
+'Skail.Int14Ger:Section':
+  superTypes: ['TYPO3.Neos:Content']
+  childNodes:
+    'content':
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Section für Inhalte'
+    group: 'structure'
+  properties:
+    title:
+      type: string
+      defaultValue: 'Section'
+    noTopPadding:
+      type: boolean
+      ui:
+        label: 'Top Padding entfernen'
+        inspector:
+          group: content

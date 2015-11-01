@@ -1,0 +1,13 @@
+<h1>{title}</h1>
+<p>{location}</p>
+<dl>
+	<f:if condition="{helm}">
+		<dt>Helm:</dt>
+		<dd>{helm.properties.title}</dd>
+	</f:if>
+	<f:if condition="{crew}">
+		<dt>Crew:</dt>
+		<dd>{crew.properties.title}</dd>
+	</f:if>
+</dl>
+<p>{description}</p>

@@ -1,0 +1,12 @@
+{namespace form=TYPO3\Form\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<form:form action="index" object="{form}" method="post" id="{form.identifier}" class="get-in-touch light contact-form">
+	<form:renderRenderable renderable="{form.currentPage}" />
+	<div class="form-group">
+		<div class="{form.renderingOptions.submitButton.containerClassAttribute}">
+			<f:form.hidden name="__currentPage" value="{form.pages -> f:count()}" />
+			<f:form.textfield type="submit" class="{form.renderingOptions.submitButton.elementClassAttribute}" value="{f:if(condition:form.renderingOptions.submitButtonLabel, then: form.renderingOptions.submitButtonLabel, else: 'Absenden')}" />
+		</div>
+	</div>
+</form:form>

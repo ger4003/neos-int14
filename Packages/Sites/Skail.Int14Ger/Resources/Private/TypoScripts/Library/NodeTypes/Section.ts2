@@ -1,0 +1,8 @@
+prototype(Skail.Int14Ger:Section) {
+	content = TYPO3.Neos:ContentCollection {
+		tagName = 'section'
+		nodePath = 'content'
+		attributes.class = ${q(node).property('noTopPadding') ? 'col-lg-12 col-md-12 col-sm-12 small-padding marine-contents-container' : 'col-lg-12 col-md-12 col-sm-12 small-padding'}
+	}
+	attributes.class = 'row'
+}

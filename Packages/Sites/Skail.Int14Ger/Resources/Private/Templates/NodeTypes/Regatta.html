@@ -1,0 +1,145 @@
+{namespace m=TYPO3\Media\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<div{attributes -> f:format.raw()}>
+	<section class="main-content col-lg-9 col-md-8 col-sm-8 small-padding">
+		<div id="post-items">
+			<!-- Post Item -->
+			<div class="post blog-post blog-post-classic col-lg-12 col-md-12 col-sm-12 margin-top20">
+				<div class="blog-post-list">
+					<f:render partial="Event/Meta" arguments="{_all}" />
+
+					<div class="blog-post-content">
+						<div class="blog-post-meta-xs">
+							<div class="blog-post-meta">
+								<h4 class="text-center">{startDate -> f:format.date(cldrFormat: 'd. MMM', forceLocale: true)} - {endDate -> f:format.date(cldrFormat: 'd. MMM y', forceLocale: true)}</h4>
+							</div>
+							<div class="clearfix clearfix-height10"></div>
+						</div>
+
+						<f:render partial="Event/Thumbnail" arguments="{_all}" />
+
+						<!-- Post Content -->
+						<div class="post-content">
+							<f:comment>
+								<f:render partial="Event/Breadcrumb" arguments="{_all}" />
+							</f:comment>
+
+							<div class="clearfix clearfix-height30"></div>
+							<div class="row">
+								<div class="col-lg-4 col-md-6 col-sm-12">
+									<ul class="services-list iconic-service">
+										<li>
+											<i class="icons icon-flag"></i>
+											<h3 class="marine-header8-h3-color">Revier</h3>
+											<p class="marine-header8-p-color">
+												{neos:contentElement.editable(property: 'sailingArea', tag: 'span')}
+
+												<f:if condition="{backend}">
+													<f:then>
+														<span class="read-more">{neos:contentElement.editable(property: 'noticeOfRaceLinkText', tag: 'span')}</span>
+													</f:then>
+													<f:else>
+														<f:if condition="{noticeOfRaceLink}">
+															<a class="read-more big" href="{noticeOfRaceLink}" target="_blank">{noticeOfRaceLinkText}</a>
+														</f:if>
+													</f:else>
+												</f:if>
+											</p>
+										</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-md-6 col-sm-12">
+									<ul class="services-list iconic-service">
+										<li>
+											<i class="icons icon-bell"></i>
+											<h3 class="marine-header8-h3-color">Meldeschluss</h3>
+											<p class="marine-header8-p-color">
+												<f:if condition="{backend}">
+													<f:then>
+														<f:if condition="{entryClosingDate}">
+															<f:then>{entryClosingDate -> f:format.date(cldrFormat: 'd. MMMM y', forceLocale: true)}</f:then>
+															<f:else>Datum über den Inspector auswählen</f:else>
+														</f:if>
+													</f:then>
+													<f:else>
+														<f:if condition="{entryClosingDate}">
+															<f:then>{entryClosingDate -> f:format.date(cldrFormat: 'd. MMMM y', forceLocale: true)}</f:then>
+															<f:else>TBA</f:else>
+														</f:if>
+													</f:else>
+												</f:if>
+
+												<f:if condition="{backend}">
+													<f:then>
+														<span class="read-more">{neos:contentElement.editable(property: 'entryFormLinkText', tag: 'span')}</span>
+													</f:then>
+													<f:else>
+														<f:if condition="{entryFormLink}">
+															<a class="read-more big" href="{entryFormLink}" target="_blank">{entryFormLinkText}</a>
+														</f:if>
+													</f:else>
+												</f:if>
+											</p>
+										</li>
+									</ul>
+								</div>
+								<div class="col-lg-4 col-md-6 col-sm-12">
+									<ul class="services-list iconic-service">
+										<li>
+											<i class="icons icon-bullhorn"></i>
+											<h3 class="marine-header8-h3-color">Erster Start</h3>
+											<p class="marine-header8-p-color">
+												<f:if condition="{backend}">
+													<f:then>
+														<f:if condition="{firstWarningSignal}">
+															<f:then>
+																{firstWarningSignal -> f:format.date(cldrFormat: 'd. MMMM H:mm', forceLocale: true)}
+															</f:then>
+															<f:else>
+																Datum über den Inspector auswählen
+															</f:else>
+														</f:if>
+													</f:then>
+													<f:else>
+														<f:if condition="{firstWarningSignal}">
+															<f:then>
+																{firstWarningSignal -> f:format.date(cldrFormat: 'd. MMMM H:mm', forceLocale: true)} Uhr
+															</f:then>
+															<f:else>
+																TBA
+															</f:else>
+														</f:if>
+													</f:else>
+												</f:if>
+
+												<f:if condition="{backend}">
+													<f:then>
+														<span class="read-more">{neos:contentElement.editable(property: 'eventLinkText', tag: 'span')}</span>
+													</f:then>
+													<f:else>
+														<f:if condition="{eventLink}">
+															<a class="read-more big" href="{eventLink}" target="_blank">{eventLinkText}</a>
+														</f:if>
+													</f:else>
+												</f:if>
+											</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="clearfix clearfix-height30"></div>
+							{main -> f:format.raw()}
+							<!-- /Post Content -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Post Item -->
+		</div>
+	</section>
+	<aside class="sidebar col-lg-3 col-md-4 col-sm-4">
+		{contactInfo -> f:format.raw()}
+		{aside -> f:format.raw()}
+	</aside>
+</div>

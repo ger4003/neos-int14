@@ -1,0 +1,18 @@
+{namespace m=TYPO3\Media\ViewHelpers}
+
+<div class="post-thumbnail">
+	<f:if condition="{mainImage}">
+		<f:then>
+			<m:image asset="{mainImage}" alt="{mainImage.title}" maximumWidth="800" maximumHeight="320"/>
+			<div class="post-hover">
+				<f:if condition="{url}">
+					<a class="link-icon" href="{url}" target="_blank" title="{url}"></a>
+				</f:if>
+				<a class="search-icon prettyPhoto" href="{f:uri.resource(resource: mainImage.resource)}"></a>
+			</div>
+		</f:then>
+		<f:else>
+			<img src="https://placehold.it/800x320?text={title}" alt="{title}"/>
+		</f:else>
+	</f:if>
+</div>

@@ -1,0 +1,70 @@
+type: 'TYPO3.Form:Form'
+identifier: contact-role-form
+label: "Ämter Kontakt Formular"
+renderingOptions:
+    submitButtonLabel: 'Absenden'
+    submitButton:
+      containerClassAttribute: 'align-right'
+renderables:
+  -
+    type: 'TYPO3.Form:Page'
+    identifier: page-one
+    renderables:
+      -
+        type: 'Skail.Int14Ger:SingleNodeSelectDropdown'
+        identifier: recipient
+        label: 'An'
+        validators:
+          - identifier: 'TYPO3.Flow:NotEmpty'
+        properties:
+          optionNodeType: 'Skail.Int14Ger:Role'
+          optionValueField: 'identifier'
+          optionLabelField: 'title'
+      -
+        type: 'TYPO3.Form:SingleLineText'
+        identifier: name
+        label: Name
+        validators:
+          - identifier: 'TYPO3.Flow:NotEmpty'
+        properties:
+          placeholder: 'Name *'
+          elementIcon: 'icon-user-1'
+        defaultValue: ''
+      -
+        type: 'TYPO3.Form:SingleLineText'
+        identifier: email
+        label: E-Mail
+        validators:
+          - identifier: 'TYPO3.Flow:NotEmpty'
+          - identifier: 'TYPO3.Flow:EmailAddress'
+        properties:
+          placeholder: 'E-Mail *'
+          elementIcon: 'icon-email'
+        defaultValue: ''
+      -
+        type: 'TYPO3.Form:MultiLineText'
+        identifier: message
+        label: Nachricht
+        validators:
+          - identifier: 'TYPO3.Flow:NotEmpty'
+        properties:
+          placeholder: 'Deine Nachricht *'
+        defaultValue: ''
+finishers:
+  -
+    identifier: 'Skail.Int14Ger:Email'
+    options:
+      templatePathAndFilename: resource://Skail.Int14Ger/Private/Templates/Email/Message.txt
+      subject: Nachricht von international14.de (Kontaktformular)
+      format: plaintext
+      recipientNodeIdentifier: '{recipient}'
+      recipientNodeAddressProperty: 'email'
+      senderName: '{name}'
+      senderAddress: '{email}'
+      replyToAddress: '{email}'
+  -
+    identifier: 'TYPO3.Form:Confirmation'
+    options:
+      message: >
+        <h4>Vielen Dank für Dein Feedback!</h4>
+        <p>Deine Nachricht wurde an uns verschickt.</p>

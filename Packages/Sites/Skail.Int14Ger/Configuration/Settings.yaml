@@ -1,0 +1,128 @@
+TYPO3:
+  TYPO3CR:
+    Search:
+      elasticSearch:
+        indexName: int14ger-typo3cr
+
+  Flow:
+    i18n:
+      defaultLocale: 'de_DE'
+
+  Neos:
+    nodeTypes:
+      groups:
+        blog:
+          position: 'after plugins'
+          label: 'Blog'
+        kv:
+          position: 'after blog'
+          label: 'Klassenvereinigung'
+
+    userInterface:
+      inspector:
+        dataTypes:
+          'TYPO3\Media\Domain\Model\ImageVariant':
+            editorOptions:
+              crop:
+                aspectRatio:
+                  options:
+                    square:
+                      width: 1
+                      height: 1
+                      label: 'Square'
+                    fullHD:
+                      width: 192
+                      height: 108
+                      label: 'Full HD'
+                    fourFive: ~
+                    fiveSeven: ~
+                    twoThree: ~
+                    fourThree: ~
+                    sixteenNine: ~
+                  enableOriginal: TRUE
+                  allowCustom: TRUE
+                  locked:
+                    width: 0
+                    height: 0
+
+  Form:
+    yamlPersistenceManager:
+      savePath: 'resource://Skail.Int14Ger/Private/Form/'
+    presets:
+      default:
+        ### FORM ELEMENTS ###
+        formElementTypes:
+          'TYPO3.Form:Form':
+            renderingOptions:
+              templatePathPattern: 'resource://Skail.Int14Ger/Private/Templates/Form/Form.html'
+              submitButton:
+                elementClassAttribute: 'btn'
+                containerClassAttribute: ''
+                labelClassAttribute: 'button-text'
+              submitButtonLabel: 'Absenden'
+
+          'TYPO3.Form:FormElement':
+            renderingOptions:
+              layoutPathPattern: 'resource://Skail.Int14Ger/Private/Templates/Form/Layouts/Field.html'
+            properties:
+              elementClassAttribute: 'form-control'
+              containerClassAttribute: ''
+              labelClassAttribute: 'control-label hidden'
+
+          'TYPO3.Form:SingleLineText':
+            renderingOptions:
+              templatePathPattern: 'resource://Skail.Int14Ger/Private/Templates/Form/SingleLineText.html'
+
+          'TYPO3.Form:MultiLineText':
+            renderingOptions:
+              templatePathPattern: 'resource://Skail.Int14Ger/Private/Templates/Form/MultiLineText.html'
+            properties:
+              elementClassAttribute: 'form-control'
+
+          'TYPO3.Form:SingleSelectRadiobuttons':
+            renderingOptions:
+              templatePathPattern: 'resource://Skail.Int14Ger/Private/Templates/Form/SingleSelectRadiobuttons.html'
+            properties:
+              elementClassAttribute: 'form-control'
+
+          'TYPO3.Form:MultipleSelectDropdown':
+            properties:
+              elementClassAttribute: 'large'
+
+          'TYPO3.Form:Checkbox':
+            renderingOptions:
+              templatePathPattern: 'resource://Skail.Int14Ger/Private/Templates/Form/Checkbox.html'
+            properties:
+             elementClassAttribute: 'form-control'
+
+          'Skail.Int14Ger:SingleNodeSelectDropdown':
+            superTypes: ['TYPO3.Form:FormElement']
+            implementationClassName: 'Skail\Int14Ger\Form\FormElements\SingleNodeSelectDropdown'
+            renderingOptions:
+              templatePathPattern: 'resource://Skail.Int14Ger/Private/Templates/Form/SingleNodeSelectDropdown.html'
+            properties:
+              optionNodeType: 'TYPO3.Neos:Document'
+              optionValueField: 'title'
+              optionLabelField: 'title'
+
+        ### FINISHER ###
+        finisherPresets:
+          'Skail.Int14Ger:Email':
+            implementationClassName: 'Skail\Int14Ger\Form\Finishers\EmailFinisher'
+
+#  TYPO3CR:
+#    contentDimensions:
+#      'language':
+#        label: 'Sprache wählen'
+#        icon: 'icon-language'
+#        default: 'de'
+#        defaultPreset: 'de'
+#        presets:
+#          'de':
+#            label: 'Deutsch'
+#            values: ['de']
+#            uriSegment: 'deutsch'
+#          'en':
+#            label: 'Englisch'
+#            values: ['en']
+#            uriSegment: 'english'

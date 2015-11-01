@@ -1,0 +1,65 @@
+.hl-no-margin-top h3,
+.hl-no-margin-top h4,
+.hl-no-margin-top h5,
+.hl-no-margin-top h6 {
+    margin-top: 1px;
+}
+
+span.read-more {
+    color: #008fd5;
+}
+
+.get-in-touch input.form-control {
+    height: auto;
+}
+
+.recent-post .post-content {
+    background: none;
+}
+
+.blog-post-list .blog-post-meta-xs {
+    display: none;
+}
+
+@media (min-width:992px) {
+    #header img.logo {
+        max-height: 80px;
+    }
+}
+
+@media (max-width:320px) {
+    .blog-post-list .blog-post-meta-xs {
+        display: block;
+    }
+
+    .blog-post-list .blog-post-meta-xs .blog-post-meta {
+        display: block;
+        width: auto;
+    }
+}
+
+/* adjustments for content editing */
+.neos-controls #marine-content-wrapper {
+    top: 80px; /* height of neos-top-bar + neos-context-bar */
+}
+.neos-edit-preview-panel-open #marine-content-wrapper {
+    top: 190px;
+}
+
+.neos-navigate-panel-open #marine-content-wrapper,
+.neos-menu-panel-open #marine-content-wrapper {
+    left: 320px;
+}
+
+.neos-controls #header {
+    top: 80px; /* height of neos-top-bar + neos-context-bar */
+}
+.neos-edit-preview-panel-open #header {
+    top: 190px; /* height of neos-top-bar + neos-context-bar */
+}
+
+.neos-backend .skail-int14ger-stageslider {
+    margin-top: 25px;
+}
+
+

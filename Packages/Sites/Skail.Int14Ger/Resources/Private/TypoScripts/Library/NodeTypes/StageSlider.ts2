@@ -1,0 +1,25 @@
+prototype(Skail.Int14Ger:StageSlider) {
+	sliderItems = TYPO3.Neos:ContentCollection {
+		nodePath = 'sliderItems'
+		iterationName = 'sliderItemsIteration'
+		attributes.class = 'slider-inner'
+		tagName = 'ul'
+	}
+
+	attributes.id = 'slider'
+
+	// Collect the sliders children but only images
+	sliderItemArray = ${q(node).children('sliderItems').children('[instanceof Skail.Int14Ger:StageSliderImage]')}
+
+	// Enhance image prototype when inside the slider
+	prototype(Skail.Int14Ger:StageSliderImage) {
+		// Render images in the slider with a special template.
+		templatePath = 'resource://Skail.Int14Ger/Private/Templates/TypoScriptObjects/StageSliderItem.html'
+
+		// The first item should later be marked as active
+		attributes.class = ${'item' + (sliderItemsIteration.isFirst ? ' active' : '')}
+
+		// We want to use the item iterator in fluid so we have to store it as variable.
+		iteration = ${sliderItemsIteration}
+	}
+}

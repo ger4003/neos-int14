@@ -1,0 +1,15 @@
+prototype(Skail.Int14Ger:Timeline) {
+	type = ${q(node).property('type') ? q(node).property('type') : ''}
+	items = ${Search.query(site).nodeType(this.type).sortAsc('startDate').execute()}
+
+	timelineItem = Skail.Int14Ger:TimelineItem
+}
+
+prototype(Skail.Int14Ger:TimelineItem) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/Timeline.html'
+	sectionName = 'timelineItem'
+
+	iterator = ${iterator}
+	node = ${node}
+	item = ${item}
+}

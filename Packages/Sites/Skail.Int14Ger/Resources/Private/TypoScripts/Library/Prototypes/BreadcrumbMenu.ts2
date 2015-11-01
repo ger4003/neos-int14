@@ -1,0 +1,10 @@
+prototype(Skail.Int14Ger:BreadcrumbMenu) < prototype(TYPO3.Neos:BreadcrumbMenu) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/TypoScriptObjects/BreadcrumbMenu.html'
+	itemCollection = ${q(node).add(q(node).parents('[instanceof TYPO3.Neos:Document]')).get()}
+
+	attributes.class = 'breadcrumbs'
+
+	current.attributes = TYPO3.TypoScript:Attributes {
+		class = 'current'
+	}
+}

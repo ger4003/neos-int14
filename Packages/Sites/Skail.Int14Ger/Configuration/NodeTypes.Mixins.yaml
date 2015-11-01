@@ -1,0 +1,38 @@
+'TYPO3.Neos.NodeTypes:TitleMixin':
+  properties:
+    title:
+      defaultValue: '<h3>Überschrift hier eingeben</h3>'
+      ui:
+        aloha:
+          'format':
+            'h1': FALSE
+            'h2': FALSE
+            'h3': TRUE
+            'h4': TRUE
+            'h5': TRUE
+            'h6': TRUE
+
+'TYPO3.Neos.NodeTypes:TextMixin':
+  properties:
+    text:
+      ui:
+        aloha:
+          'format':
+            'h1': FALSE
+            'h2': FALSE
+            'h3': TRUE
+            'h4': TRUE
+            'h5': TRUE
+            'h6': TRUE
+
+'Skail.Int14Ger:ListMixin':
+  abstract: TRUE
+  properties:
+    listImage:
+      type: TYPO3\Media\Domain\Model\ImageVariant
+      ui:
+        label: 'List Image'
+        icon: 'icon-picture'
+        inspector:
+          group: 'document'
+          position: 100

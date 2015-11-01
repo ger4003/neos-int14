@@ -1,0 +1,10 @@
+#
+# Folder rendering
+#
+prototype(Skail.Int14Ger:Folder.Document) < prototype(Skail.Int14Ger:DefaultPage) {
+	body.content.main = Skail.Int14Ger:Folder
+}
+
+prototype(Skail.Int14Ger:Folder) < prototype(TYPO3.Neos:Content) {
+	children = ${q(node).children('[instanceof TYPO3.Neos:Document]')}
+}

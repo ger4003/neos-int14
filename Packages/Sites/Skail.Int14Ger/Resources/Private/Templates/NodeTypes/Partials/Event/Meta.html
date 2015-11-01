@@ -1,0 +1,26 @@
+{namespace m=TYPO3\Media\ViewHelpers}
+
+<div class="blog-post-meta">
+	<span class="post-date">
+		<span class="post-day">{startDate -> f:format.date(format: 'd')}</span><br/>
+		{startDate -> f:format.date(cldrFormat: 'MMM y', forceLocale: true)}
+	</span>
+	<span class="post-format">
+		-
+		<!-- <span class="photo-icon"></span> -->
+	</span>
+	<span class="post-date">
+		<span class="post-day">{endDate -> f:format.date(format: 'd')}</span><br/>
+		{endDate -> f:format.date(cldrFormat: 'MMM y', forceLocale: true)}
+	</span>
+
+	<f:if condition="{locationAvatar}">
+		<f:then>
+			<m:image asset="{locationAvatar}" class="avatar" alt="{city}" maximumWidth="60" maximumHeight="60"/>
+		</f:then>
+		<f:else>
+			<img src="https://placehold.it/60x60?text={city -> f:format.crop(maxCharacters: 1, append: '')}" class="avatar" alt="{city}"/>
+		</f:else>
+	</f:if>
+	<span class="author">{city}</span>
+</div>

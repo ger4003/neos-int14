@@ -1,0 +1,12 @@
+prototype(TYPO3.Neos:Content) {
+	backend = ${node.context.workspace.name != 'live' ? 'backend' : ''}
+}
+
+prototype(TYPO3.Neos.NodeTypes:Headline) {
+	attributes.class = ${q(node).property('disableMarginTop') ? 'hl-no-margin-top' : ''}
+	attributes.class.@process.nodeType >
+}
+
+prototype(TYPO3.Neos.NodeTypes:MultiColumn) {
+	noBottomPadding = ${q(node).property('noBottomPadding') ? TRUE : FALSE}
+}

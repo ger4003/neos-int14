@@ -1,0 +1,15 @@
+{
+    "name": "skail/int14ger",
+    "type": "typo3-flow-site",
+    "description": "Add description here",
+    "require": {
+        "typo3/neos": "*",
+        "typo3/neos-nodetypes": "*",
+        "flowpack/elasticsearch-contentrepositoryadaptor": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Skail\\Int14Ger": "Classes"
+        }
+    }
+}

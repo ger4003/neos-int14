@@ -1,0 +1,25 @@
+#
+# Role list rendering
+#
+prototype(Skail.Int14Ger:EventList) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/EventList.html'
+	eventListItems = TYPO3.TypoScript:Collection {
+		type = ${q(node).property('type') ? q(node).property('type') : ''}
+		limit = ${q(node).property('limit')}
+		orderBy = ${q(node).property('orderBy') ? q(node).property('orderBy') : 'startDate'}
+		collection = ${Search.query(site).nodeType(this.type).greaterThanOrEqual('startDate', 'now').sortAsc(this.orderBy).limit(this.limit).execute()}
+		itemName = 'event'
+		itemRenderer = Skail.Int14Ger:EventListItem
+		iterationName = 'iterator'
+
+		@cache.mode = 'cached'
+	}
+}
+
+prototype(Skail.Int14Ger:EventListItem) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/EventList.html'
+	sectionName = 'eventListItem'
+
+	event = ${event}
+	eventIterator = ${iterator}
+}

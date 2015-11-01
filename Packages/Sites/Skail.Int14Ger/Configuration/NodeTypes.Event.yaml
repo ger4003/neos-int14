@@ -1,0 +1,248 @@
+'Skail.Int14Ger:Event':
+  superTypes: ['TYPO3.Neos:Document']
+  childNodes:
+    'main':
+      type: 'TYPO3.Neos:ContentCollection'
+    'aside':
+      type: 'TYPO3.Neos:ContentCollection'
+    'beneath':
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Veranstaltung'
+    group: kv
+    icon: 'icon-calendar'
+  properties:
+    title:
+      ui:
+        inlineEditable: TRUE
+        inspector:
+          position: 10
+    uriPathSegment:
+      ui:
+        inspector:
+          position: 20
+    description:
+      type: string
+      ui:
+        label: Kurze Beschreibung
+        inspector:
+          group: document
+          position: 25
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+    startDate:
+      type: date
+      ui:
+        label: 'Startdatum'
+        reloadIfChanged: TRUE
+        inspector:
+          group: document
+          position: 30
+          editorOptions:
+            format: 'j. M Y - H:i'
+      validation:
+        'TYPO3.Neos/Validation/DateTimeValidator': []
+    endDate:
+      type: date
+      ui:
+        label: 'Enddatum'
+        reloadIfChanged: TRUE
+        inspector:
+          group: document
+          position: 40
+          editorOptions:
+            format: 'j. M Y - H:i'
+      validation:
+        'TYPO3.Neos/Validation/DateTimeValidator': []
+    organizer:
+      type: string
+      defaultValue: 'Name des Veranstalters'
+      ui:
+        inlineEditable: TRUE
+        label: 'Veranstalter'
+        inspector:
+          group: ~
+    organizerLinkText:
+      type: string
+      defaultValue: 'Linktext'
+      ui:
+        label: 'OrganizerLinktext'
+        inspector:
+          group: ~
+    organizerLink:
+      type: string
+      ui:
+        label: 'Webseite des Veranstalters'
+        reloadIfChanged: TRUE
+        inspector:
+          group: document
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          editorOptions:
+            assets: FALSE
+            placeholder: 'Url einfügen'
+    eventLinkText:
+      type: string
+      defaultValue: 'Event-Homepage'
+      ui:
+        label: 'EventLinktext'
+        inspector:
+          group: ~
+    eventLink:
+      type: string
+      ui:
+        label: 'Link zur Veranstaltungswebseite'
+        reloadIfChanged: TRUE
+        inspector:
+          group: document
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          editorOptions:
+            assets: FALSE
+            placeholder: 'Url einfügen'
+    street:
+      type: string
+      defaultValue: 'Strasse und Hausnummer'
+      ui:
+        label: 'Strasse'
+        inlineEditable: TRUE
+        inspector:
+          group: ~
+    zip:
+      type: string
+      defaultValue: 'PLZ'
+      ui:
+        label: 'PLZ'
+        inlineEditable: TRUE
+        inspector:
+          group: ~
+    city:
+      type: string
+      defaultValue: 'Stadt'
+      ui:
+        label: 'Stadt'
+        inlineEditable: TRUE
+        inspector:
+          group: ~
+    country:
+      type: string
+      defaultValue: 'Land'
+      ui:
+        label: 'Land'
+        inlineEditable: TRUE
+        inspector:
+          group: ~
+    phone:
+      type: string
+      defaultValue: '+00 (0000) 000000'
+      ui:
+        label: 'Telefon'
+        inlineEditable: TRUE
+        inspector:
+          group: ~
+    fax:
+      type: string
+      defaultValue: '+00 (0000) 000000'
+      ui:
+        label: 'Fax'
+        inlineEditable: TRUE
+        inspector:
+          group: ~
+    email:
+      type: string
+      ui:
+        label: 'E-Mail'
+        reloadIfChanged: TRUE
+        inspector:
+          group: document
+      validation:
+        'TYPO3.Neos/Validation/EmailAddressValidator': []
+    mainImage:
+      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      ui:
+        label: Bild (800x320)
+        reloadIfChanged: TRUE
+        icon: 'icon-picture'
+        inspector:
+          group: media
+          editorOptions:
+            features:
+              crop: TRUE
+            crop:
+              aspectRatio:
+                options:
+                  square: ~
+                  fourFive: ~
+                  fiveSeven: ~
+                  twoThree: ~
+                  fourThree: ~
+                  sixteenNine: ~
+                allowCustom: FALSE
+                locked:
+                  width: 800
+                  height: 320
+    locationAvatar:
+      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      ui:
+        label: Bild des Veranstalters (60x60)
+        icon: 'icon-picture'
+        reloadIfChanged: TRUE
+        inspector:
+          group: media
+          editorOptions:
+            features:
+              crop: TRUE
+            crop:
+              aspectRatio:
+                options:
+                  fullHD: ~
+                  fourFive: ~
+                  fiveSeven: ~
+                  twoThree: ~
+                  fourThree: ~
+                  sixteenNine: ~
+                allowCustom: TRUE
+    listImage:
+      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      ui:
+        label: Bild für Liste (130x130)
+        reloadIfChanged: FALSE
+        icon: 'icon-picture'
+        inspector:
+          group: media
+          editorOptions:
+            features:
+              crop: TRUE
+            crop:
+              aspectRatio:
+                options:
+                  fourFive: ~
+                  fiveSeven: ~
+                  twoThree: ~
+                  fourThree: ~
+                  sixteenNine: ~
+                allowCustom: FALSE
+                locked:
+                  width: 130
+                  height: 130
+    timelineImage:
+      type: 'TYPO3\Media\Domain\Model\ImageVariant'
+      ui:
+        label: Bild für Timeline (528x214)
+        reloadIfChanged: FALSE
+        icon: 'icon-picture'
+        inspector:
+          group: media
+          editorOptions:
+            features:
+              crop: TRUE
+            crop:
+              aspectRatio:
+                options:
+                  square: ~
+                  fourFive: ~
+                  fiveSeven: ~
+                  twoThree: ~
+                  fourThree: ~
+                  sixteenNine: ~
+                allowCustom: FALSE
+                locked:
+                  width: 528
+                  height: 214

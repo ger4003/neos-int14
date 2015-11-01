@@ -1,0 +1,12 @@
+<f:layout name="TYPO3.Form:Field" />
+<f:section name="field">
+	<f:form.textfield
+			property="{element.identifier}"
+			id="{element.uniqueIdentifier}"
+			class="{element.properties.elementClassAttribute}"
+			placeholder="{element.properties.placeholder}"
+			errorClass="{element.properties.elementErrorClassAttribute}"
+			required="{element.required}"
+			type="{f:if(condition: element.properties.type, then: element.properties.type, else: 'text')}" />
+</f:section>
+

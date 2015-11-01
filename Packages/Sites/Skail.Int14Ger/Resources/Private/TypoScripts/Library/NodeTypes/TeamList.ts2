@@ -1,0 +1,21 @@
+#
+# Team list rendering
+#
+prototype(Skail.Int14Ger:TeamList) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/TeamList.html'
+	teamListItem = Skail.Int14Ger:TeamListItem
+
+	title = ${q(node).property('title')}
+	teams = ${q(site).find('[instanceof Skail.Int14Ger:Team]')}
+}
+
+prototype(Skail.Int14Ger:TeamListItem) >
+prototype(Skail.Int14Ger:TeamListItem) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/TeamList.html'
+	sectionName = 'teamListItem'
+
+	node = ${node}
+	title = ${q(node).property('title')}
+	helm = ${q(node).property('helm')}
+	crew = ${q(node).property('crew')}
+}

@@ -1,0 +1,12 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+<li{attributes -> f:format.raw()}>
+	<f:if condition="{image}">
+		<f:then>
+			<media:image image="{image}" alt="{alternativeText}" title="{title}" additionalAttributes="{data-bgposition: 'center top', data-bgfit: 'cover', data-bgrepeat: 'no-repeat'}" />
+		</f:then>
+		<f:else>
+			<img src="http://placehold.it/1680x685" alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+		</f:else>
+	</f:if>
+</li>

@@ -1,0 +1,3 @@
+'TYPO3.Neos.NodeTypes:TwoColumn':
+  ui:
+    label: 'Zwei Spalten Inhalt'

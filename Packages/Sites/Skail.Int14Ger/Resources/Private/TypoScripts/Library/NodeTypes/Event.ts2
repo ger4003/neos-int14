@@ -1,0 +1,39 @@
+#
+# Event rendering
+#
+prototype(Skail.Int14Ger:Event.Document) < prototype(Skail.Int14Ger:DefaultPage) {
+	body.renderHeader = FALSE
+	body.content.main = Skail.Int14Ger:Event
+}
+
+prototype(Skail.Int14Ger:Event) < prototype(TYPO3.Neos:Content) {
+	attributes.class = 'row'
+
+	// The full main content collection (editable)
+	main = TYPO3.Neos:ContentCollection {
+		@cache.mode = 'cached'
+		nodePath = 'main'
+	}
+	aside = TYPO3.Neos:ContentCollection {
+		@cache.mode = 'cached'
+		nodePath = 'aside'
+	}
+	beneath = TYPO3.Neos:ContentCollection {
+		@cache.mode = 'cached'
+		nodePath = 'beneath'
+	}
+
+	contactInfo = Skail.Int14Ger:ContactInfo {
+		street = ${q(node).property('street')}
+		zip = ${q(node).property('zip')}
+		city = ${q(node).property('city')}
+		country = ${q(node).property('country')}
+		phone = ${node.context.workspace.name != 'live' &&  q(node).property('phone') == '' ? 'foo' : q(node).property('phone')}
+		fax = ${q(node).property('fax')}
+		email = ${q(node).property('email')}
+		organizer = ${q(node).property('organizer')}
+		organizerLink = ${q(node).property('organizerLink')}
+		organizerLink.@process.convertUris = TYPO3.Neos:ConvertUris
+		organizerLinkText = ${q(node).property('organizerLinkText')}
+	}
+}

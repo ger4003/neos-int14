@@ -1,0 +1,22 @@
+#
+# Form rendering
+#
+prototype(TYPO3.Neos.NodeTypes:Form) {
+	@override.formIdentifier = ${this.formIdentifier}
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/Form.html'
+	presetName = ${q(node).property('presetName') ? q(node).property('presetName') : 'default'}
+
+	// override form definition: structure as in form.yaml
+	overrideConfiguration = TYPO3.TypoScript:RawArray {
+		renderingOptions = TYPO3.TypoScript:RawArray {
+			siteNode = ${site}
+		}
+	}
+
+	// site property to uncached context variables
+	@cache {
+		context {
+			3 = 'site'
+		}
+	}
+}

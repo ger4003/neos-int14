@@ -1,0 +1,11 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<div{attributes -> f:format.raw()}>
+	<ul>
+		<f:for each="{children}" as="documentNode">
+			<li>
+				<neos:link.node node="{documentNode}">{documentNode.properties.title}</neos:link.node>
+			</li>
+		</f:for>
+	</ul>
+</div>

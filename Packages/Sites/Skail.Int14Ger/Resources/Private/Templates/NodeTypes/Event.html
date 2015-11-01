@@ -1,0 +1,13 @@
+
+<p>Startdatum: {startDate -> f:format.date(format: 'd.m.Y')}</p>
+<p>Enddatum: {endDate -> f:format.date(format: 'd.m.Y')}</p>
+<p>Erster Start: {firstWarningSignal -> f:format.date(format: 'd.m.Y')} <b>{firstWarningSignal -> f:format.date(format: 'H:i')} Uhr</b></p>
+<p>Segelrevier: {sailingArea}</p>
+<p>Ort: {location}</p>
+<p>
+	<a href="{url}" target="_blank">{url}</a>
+</p>
+
+<div>
+	{main -> f:format.raw()}
+</div>

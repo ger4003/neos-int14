@@ -1,0 +1,70 @@
+'Skail.Int14Ger:EventList':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Veranstaltungsliste'
+    icon: 'icon-calendar'
+    group: kv
+  properties:
+    title:
+      defaultValue: 'Veranstaltungsliste'
+    type:
+      type: string
+      ui:
+        label: 'Veranstaltungstyp'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'content'
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'Wähle ...'
+            values:
+              '':
+                label: ''
+              'Skail.Int14Ger:Event':
+                label: 'alle'
+              'Skail.Int14Ger:Regatta':
+                label: 'Regatta'
+    orderBy:
+      type: string
+      ui:
+        label: 'Sortieren nach'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'content'
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'Wähle eine Eigenschaft'
+            values:
+              '':
+                label: ''
+              'startDate':
+                label: 'Startdatum'
+              'title':
+                label: 'Titel'
+    limit:
+      type: integer
+      defaultValue: 3
+      ui:
+        label: 'Anzahl (0 für alle)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'content'
+
+    viewMorePage:
+      type: reference
+      ui:
+        label: '"Mehr anzeigen" Link'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'content'
+          editorOptions:
+            nodeTypes: ['TYPO3.Neos.NodeTypes:Page']
+
+    viewMoreText:
+      type: string
+      defaultValue: 'Alle anzeigen'
+      ui:
+        label: '"Mehr anzeigen" Link-Text'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'content'

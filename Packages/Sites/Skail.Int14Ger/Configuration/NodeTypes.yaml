@@ -1,0 +1,177 @@
+# If you need more than just the "main" content area you can
+# uncomment the snippet below. It will add a "sidebar" area
+# to your pages. You can add as many areas as you like, still
+# only those that are rendered in your TypoScript and Template
+# are visible on your page.
+---
+#'TYPO3.Neos.NodeTypes:Page':
+#  childNodes:
+#    sidebar:
+#      type: 'TYPO3.Neos:ContentCollection'
+
+
+
+
+#
+# DocumentNodeTypes
+#
+'TYPO3.Neos:Document':
+  ui:
+    label: 'Seite'
+    inspector:
+      groups:
+        media:
+          label: 'Media options'
+          position: 20
+
+'TYPO3.Neos.NodeTypes:Page':
+  childNodes:
+    footer:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    'title':
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'alignment': []
+          'format': []
+          'formatlesspaste':
+            button: FALSE
+    'hasMegaMenu':
+      type: boolean
+      ui:
+        label: 'Mega Menu aktivieren'
+        inspector:
+          group: 'visibility'
+    'layout':
+      defaultValue: 'detailPage'
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              'landingPage':
+                label: 'Landing Page'
+              'detailPage':
+                label: 'Detail Page'
+
+'Skail.Int14Ger:DetailPage':
+  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  ui:
+    label: 'Detail Page'
+  properties:
+    'layout':
+      defaultValue: 'detailPage'
+      ui:
+        inspector:
+          group: 'visibility'
+
+'Skail.Int14Ger:LandingPage':
+  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  childNodes:
+    stage:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'Skail.Int14Ger:StageSlider': TRUE
+          '*': FALSE
+  ui:
+    label: 'Landing Page'
+  properties:
+    'layout':
+      defaultValue: 'landingPage'
+      ui:
+        inspector:
+          group: 'visibility'
+    'stageText':
+      type: string
+      defaultValue: 'Enter Text here ...'
+      ui:
+        label: 'Stage Text'
+        inlineEditable: TRUE
+        aloha:
+          'alignment': []
+          'format':
+            'u': TRUE
+            'b': TRUE
+            'i': TRUE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'pre': FALSE
+            'removeFormat': FALSE
+        inspector:
+          group: '~'
+      validation:
+        'TYPO3.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 255
+    'showStageOverlay':
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Stage Overlay anzeigen'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+    'stageLink':
+      type: reference
+      ui:
+        label: 'Stage Link'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+    'stageLinkText':
+      type: string
+      defaultValue: 'Enter Link Text...'
+      ui:
+        label: 'Stage Link Text'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+
+#
+# ContentNodeTypes
+#
+'TYPO3.Neos:Content':
+  ui:
+    inspector:
+      groups:
+        content:
+          label: 'Content options'
+          position: 10
+  properties:
+    title:
+      type: string
+      defaultValue: 'Enter Text here...'
+      ui:
+        label: 'Title'
+        reloadIfChanged: TRUE
+        inlineEditable: TRUE
+        inspector:
+          group: content
+
+'TYPO3.Neos.NodeTypes:Column':
+  properties:
+    layout: [ ]
+    noBottomPadding:
+      type: boolean
+      ui:
+        label: 'Unteren Rand entfernen'
+        inspector:
+          group: 'column'
+
+#
+# Forms
+#
+'TYPO3.Neos.NodeTypes:Form':
+  properties:
+    formIdentifier:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              '': ~
+              # Maps to the file Sites/Vendor.Site/Resources/Private/Form/contact-form.yaml
+              'contact-role-form':
+                label: 'Kontakt Formular (Ämter)'

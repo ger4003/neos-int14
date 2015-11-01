@@ -1,0 +1,8 @@
+'Skail.Int14Ger:PostList':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Post List'
+    group: blog
+  properties:
+    title:
+      defaultValue: 'Blog'

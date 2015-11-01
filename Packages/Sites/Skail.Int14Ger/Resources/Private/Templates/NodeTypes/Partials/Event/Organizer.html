@@ -1,0 +1,12 @@
+{namespace m=TYPO3\Media\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<div class="post-author margin-bottom35">
+	<f:if condition="{locationAvatar}">
+		<m:image asset="{locationAvatar}" class="avatar" alt="{organizer}" />
+	</f:if>
+
+	{neos:contentElement.editable(property: 'organizer', tag: 'h3')}
+
+	{beneath -> f:format.raw()}
+</div>

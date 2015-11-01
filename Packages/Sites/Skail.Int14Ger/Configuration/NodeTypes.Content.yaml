@@ -1,0 +1,9 @@
+'TYPO3.Neos.NodeTypes:Headline':
+  properties:
+    disableMarginTop:
+      type: boolean
+      ui:
+        label: 'Disable margin-top'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'content'

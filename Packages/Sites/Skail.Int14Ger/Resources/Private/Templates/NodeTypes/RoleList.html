@@ -1,0 +1,66 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+
+<div{attributes -> f:format.raw()}>
+	<h2 class="special-text form-map-h3 marine-page-aboutus-title" data-animation="">{title}</h2>
+	{roleListItems -> f:format.raw()}
+	<div class="clearfix"></div>
+</div>
+
+<f:section name="roleListItem">
+	<f:for each="{persons}" as="person" iteration="personIterator">
+		<div class="col-lg-3 col-md-3 col-sm-6">
+			<div class="team-member " data-animation="">
+				<f:comment>
+					<neos:link.node node="{person}" title="{person.properties.title}">
+						insert if-condition with person image here
+					</neos:link.node>
+				</f:comment>
+
+				<f:if condition="{person.properties.listImage}">
+					<f:then>
+						<media:image asset="{person.properties.listImage}" alt="{person.properties.title}" title="{person.properties.title}" maximumWidth="570" maximumHeight="543" />
+					</f:then>
+					<f:else>
+
+						{f:format.crop(maxCharacters: 17)}
+						<img src="http://placehold.it/570x543?text={person.properties.firstName -> f:format.crop(maxCharacters: 1, append: '')}{person.properties.lastName -> f:format.crop(maxCharacters: 1, append: '')}" alt="img-responsive"/>
+					</f:else>
+				</f:if>
+				<h4 class="post-title marine-main-h4">{person.properties.title}</h4>
+				<span class="job-title marine-main-h4-span">{role.properties.title}</span>
+
+				<f:comment>
+				<!--
+				<div class="text-content marine-text-content ">
+					<p>
+						Vivamus pretium imperdiet dignissim.
+					</p>
+				</div>
+
+				<span class="small-line marine-team-border-top"></span>
+				<ul class="social-media">
+					<li><a href="#" class="marine-text-content"><i class="icon-facebook"></i></a></li>
+					<li><a href="#" class="marine-text-content"><i class="icon-twitter"></i></a></li>
+					<li><a href="#" class="marine-text-content"><i class="icon-skype"></i></a></li>
+					<li><a href="#" class="marine-text-content"><i class="icon-google"></i></a></li>
+					<li><a href="#" class="marine-text-content"><i class="icon-vimeo"></i></a></li>
+					<li><a href="#" class="marine-text-content"><i class="icon-linkedin"></i></a></li>
+					<li><a href="#" class="marine-text-content"><i class="icon-instagram"></i></a></li>
+				</ul>
+				-->
+				</f:comment>
+			</div>
+		</div>
+	</f:for>
+
+	<f:if condition="{roleIterator.index} > 0">
+		<f:if condition="{roleIterator.index} % 4">
+			<f:then></f:then>
+			<f:else>
+				<div class="clearfix clearfix-height40"></div>
+			</f:else>
+		</f:if>
+	</f:if>
+</f:section>

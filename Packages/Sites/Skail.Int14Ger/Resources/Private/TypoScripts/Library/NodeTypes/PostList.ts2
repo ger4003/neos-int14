@@ -1,0 +1,18 @@
+#
+# Blog post list rendering
+#
+prototype(Skail.Int14Ger:PostList) {
+	title = ${q(node).property('title')}
+	// Pass the collection of posts to the template
+	posts = ${q(site).find('[instanceof Skail.Int14Ger:Post]')}
+	postListItem = Skail.Int14Ger:PostListItem
+}
+
+prototype(Skail.Int14Ger:PostListItem) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/PostList.html'
+	sectionName = 'postListItem'
+
+	node = ${node}
+
+	title = ${q(node).property('title')}
+}

@@ -1,0 +1,31 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<f:if condition="{showStageOverlay}">
+	<neos:contentElement.wrap node="{node}">
+		<section class="full-width-bg blue-gradient-bg normal-padding alternate-slider-bg page-top-calltoaction marine-aboutus-page-altenate-slider">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<section class="sc-call-to-action full-width-bg light-gray-bg small-padding first-page last-page transparent" style="">
+						<div class="row">
+							<f:if condition="{stageLink}">
+								<f:then>
+									<div class="col-lg-9 col-md-9 col-sm-9">
+										<h2 class="big">{neos:contentElement.editable(property: 'stageText', tag: 'span')}</h2>
+									</div>
+									<div class="col-lg-3 col-md-3 col-sm-3 align-right">
+										<neos:link.node node="{stageLink}" class="button biggest"><i class="icons icon-info-circled-alt"></i>{stageLinkText}</neos:link.node>
+									</div>
+								</f:then>
+								<f:else>
+									<div class="col-lg-12 col-md-12 col-sm-12">
+										<h2 class="big">{neos:contentElement.editable(property: 'stageText', tag: 'span')}</h2>
+									</div>
+								</f:else>
+							</f:if>
+
+						</div>
+					</section>
+				</div>
+			</div>
+		</section>
+	</neos:contentElement.wrap>
+</f:if>

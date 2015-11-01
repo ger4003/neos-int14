@@ -1,0 +1,25 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<section{attributes -> f:format.raw()}>
+	<div class="container">
+		<!-- START REVOLUTION SLIDER 4.6.0 fullwidth mode -->
+		<div id="rev_slider_4_1_wrapper" data-int14ger-plugin="stageSlider" data-int14ger-plugin-options='{"shuffel": "on"}' class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#ffffff;padding:0px;margin-top:0px;margin-bottom:0px;max-height:685px;">
+			<div id="rev_slider_4_1" class="rev_slider fullwidthabanner" style="display:none;max-height:685px;height:685px;">
+
+				<f:if condition="{sliderItemArray}">
+					<f:then>
+						<!-- Wrapper for slides -->
+						{sliderItems -> f:format.raw()}
+						<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+					</f:then>
+					<f:else>
+						<div style="margin-top: 110px;" class="align-center">
+							<p>Bilder können über den <a href="http://neos.readthedocs.org/en/latest/UserGuide/UserInterfaceBasics.html" target="_blank">Structure tree (unten links)</a> hinzufügt werden.</p>
+						</div>
+					</f:else>
+				</f:if>
+			</div>
+		</div>
+	</div>
+</section>

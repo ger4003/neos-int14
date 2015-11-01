@@ -1,0 +1,40 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<div>
+	<f:if condition="{node.context.workspace.name} != 'live'">
+		<f:then>
+			<h1>{neos:contentElement.editable(property: 'title')}</h1>
+		</f:then>
+		<f:else>
+			<h1>{title}</h1>
+		</f:else>
+	</f:if>
+
+	<ul>
+		<f:for each="{teams}" as="team">
+			<li>
+				<ts:render path="teamListItem" context="{node: team}" />
+			</li>
+		</f:for>
+	</ul>
+</div>
+
+<f:section name="teamListItem">
+	<neos:link.node node="{node}">{title}</neos:link.node>
+	<p>
+		<f:if condition="{helm}">
+			<f:then>
+				{helm.properties.title}
+				<f:if condition="{crew}">
+					& {crew.properties.title}
+				</f:if>
+			</f:then>
+			<f:else>
+				<f:if condition="{crew}">
+					{crew.properties.title}
+				</f:if>
+			</f:else>
+		</f:if>
+	</p>
+</f:section>

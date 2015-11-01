@@ -1,0 +1,99 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div id="contact-info-2" class="widget widget_contact_info">
+	<div class="contact-info">
+		<h4>Veranstalter</h4>
+		<p>
+			{neos:contentElement.editable(property: 'organizer', tag: 'span', class: 'light-blue')}
+		</p>
+		<p>
+			{neos:contentElement.editable(property: 'street', tag: 'span')}<br/>
+			{neos:contentElement.editable(property: 'zip', tag: 'span')}
+			{neos:contentElement.editable(property: 'city', tag: 'span')}
+			<f:if condition="{country}">
+				<br />
+				{neos:contentElement.editable(property: 'country', tag: 'span')}
+			</f:if>
+		</p>
+
+		<f:if condition="{backend}">
+			<f:then>
+				<p>
+					<span class="light-blue">Telefon: </span><br/>
+					{neos:contentElement.editable(property: 'phone', tag: 'span')}
+				</p>
+			</f:then>
+			<f:else>
+				<f:if condition="{phone}">
+					<p>
+						<span class="light-blue">Telefon: </span><br/>
+						{phone}
+					</p>
+				</f:if>
+			</f:else>
+		</f:if>
+
+		<f:if condition="{backend}">
+			<f:then>
+				<p>
+					<span class="light-blue">Fax: </span><br/>
+					{neos:contentElement.editable(property: 'fax', tag: 'span')}
+				</p>
+			</f:then>
+			<f:else>
+				<f:if condition="{fax}">
+					<p>
+						<span class="light-blue">Fax: </span><br/>
+						{fax}
+					</p>
+				</f:if>
+			</f:else>
+		</f:if>
+
+		<f:if condition="{backend}">
+			<f:then>
+				<p>
+					<span class="light-blue">E-Mail: </span><br/>
+					<f:if condition="{email}">
+						<f:then>{email}</f:then>
+						<f:else>Über den Inspector editieren</f:else>
+					</f:if>
+				</p>
+			</f:then>
+			<f:else>
+				<f:if condition="{email}">
+					<p>
+						<span class="light-blue">E-Mail: </span><br/>
+						<a href="mailto:{email}" target="_blank">{email}</a>
+					</p>
+				</f:if>
+			</f:else>
+		</f:if>
+
+		<f:if condition="{backend}">
+			<f:then>
+				<p>
+					<span class="light-blue">Webseite:</span><br/>
+					{neos:contentElement.editable(property: 'organizerLinkText', tag: 'span')}
+				</p>
+			</f:then>
+			<f:else>
+				<f:if condition="{organizerLink}">
+					<p>
+						<span class="light-blue">Webseite:</span><br/>
+						<a href="{organizerLink}" target="_blank">{organizerLinkText}</a>
+					</p>
+				</f:if>
+			</f:else>
+		</f:if>
+
+		<f:comment>
+			<ul class="social-media">
+				<li><a target="_blank" href="http://facebook.com"><i class="icon-facebook"></i></a></li>
+				<li><a target="_blank" href="http://twiiter.com/google"><i class="icon-twitter"></i></a></li>
+				<li><a target="_blank" href="http://google.com"><i class="icon-google"></i></a></li>
+				<li><a target="_blank" href="http://linkedin.com"><i class="icon-linkedin"></i></a></li>
+				<li><a target="_blank" href="http://instagram.com"><i class="icon-instagram"></i></a></li>
+			</ul>
+		</f:comment>
+	</div>
+</div>

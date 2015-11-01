@@ -1,0 +1,41 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div id="contact-info-2" class="widget widget_contact_info">
+	<div class="contact-info">
+		<p>
+			<span class="light-blue">Adresse: </span><br/>
+			{street}<br/>
+			{zip} {city}<br/>
+			<f:if condition="{country}">
+				{country}<br/>
+			</f:if>
+			<br/>
+			<f:if condition="{phone}">
+				<span class="light-blue">Telefon: </span><br/>
+				{phone}<br/>
+			</f:if>
+			<f:if condition="{fax}">
+				<span class="light-blue">Fax: </span><br/>
+				{fax}<br/>
+			</f:if>
+			<f:if condition="{email}">
+				<br/>
+				<span class="light-blue">E-Mail: </span><br>
+				<a href="mailto:{email}" target="_blank">{email}</a><br/>
+			</f:if>
+			<f:if condition="{url}">
+				<br/>
+				<span class="light-blue">Webseite: </span><br>
+				<a href="{url}" target="_blank">{url}</a>
+			</f:if>
+		</p>
+		<f:comment>
+			<ul class="social-media">
+				<li><a target="_blank" href="http://facebook.com"><i class="icon-facebook"></i></a></li>
+				<li><a target="_blank" href="http://twiiter.com/google"><i class="icon-twitter"></i></a></li>
+				<li><a target="_blank" href="http://google.com"><i class="icon-google"></i></a></li>
+				<li><a target="_blank" href="http://linkedin.com"><i class="icon-linkedin"></i></a></li>
+				<li><a target="_blank" href="http://instagram.com"><i class="icon-instagram"></i></a></li>
+			</ul>
+		</f:comment>
+	</div>
+</div>

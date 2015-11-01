@@ -1,0 +1,6 @@
+include: resource://Ttree.Plugin.Seo/Private/TypoScripts/Library/NodeTypes.ts2
+
+prototype(Ttree.Plugin.Seo:StaticPageTitle) {
+	value = 'Deutsche International 14 Klassenvereinigung'
+}
+

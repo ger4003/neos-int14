@@ -1,0 +1,10 @@
+#
+# Person rendering
+#
+prototype(Skail.Int14Ger:Person.Document) < prototype(Skail.Int14Ger:DefaultPage) {
+	body.renderHeader = FALSE
+	// Use the PostView prototype with "renderSinglePost" = true to render the detail view of a post
+	body.content.main = Skail.Int14Ger:Person
+}
+
+prototype(Skail.Int14Ger:Person) < prototype(TYPO3.Neos:Content)

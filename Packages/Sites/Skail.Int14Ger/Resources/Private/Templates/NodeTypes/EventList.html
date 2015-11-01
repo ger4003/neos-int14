@@ -1,0 +1,61 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace m=TYPO3\Media\ViewHelpers}
+
+<div{attributes -> f:format.raw()}>
+	<h3>{neos:contentElement.editable(property: 'title', node: node)}</h3>
+
+	{eventListItems -> f:format.raw()}
+
+	<f:if condition="{viewMorePage}">
+		<p class="align-right">
+			<neos:link.node node="{viewMorePage}" class="button big">
+				<i class="icons icon-calendar"></i>
+				<f:if condition="{viewMoreText}">
+					<f:then>{viewMoreText}</f:then>
+					<f:else>{viewMorePage.properties.title}</f:else>
+				</f:if>
+			</neos:link.node>
+		</p>
+	</f:if>
+</div>
+
+<f:section name="eventListItem">
+	<div class="blog-post recent-post">
+		<div class="post-image">
+			<div class="recent-post-meta">
+				<span class="post-date">
+					<span class="post-day">{event.properties.startDate -> f:format.date(format: 'd')}</span><br/>
+					{event.properties.startDate -> f:format.date(cldrFormat: 'MMM y', forceLocale: true)}
+				</span>
+			</div>
+			<div class="post-thumbnail">
+				<neos:link.node node="{event}" title="{event.properties.title}">
+					<f:if condition="{event.properties.listImage}">
+						<f:then>
+							<m:image asset="{event.properties.listImage}" alt="{event.properties.title}" maximumWidth="130" maximumHeight="130" allowCropping="1" />
+						</f:then>
+						<f:else>
+							<f:if condition="{event.properties.mainImage}">
+								<f:then>
+									<m:image asset="{event.properties.mainImage}" alt="{event.properties.title}" maximumWidth="130" maximumHeight="130" allowCropping="1" />
+								</f:then>
+								<f:else>
+									<img src="https://placehold.it/130x130?text={f:if(condition: event.properties.category, then: event.properties.category, else: '14')}" alt="{event.properties.title}"/>
+								</f:else>
+							</f:if>
+						</f:else>
+					</f:if>
+				</neos:link.node>
+			</div>
+		</div>
+		<div class="post-content">
+			<ul class="post-meta">
+				<li>{event.properties.city}</li>
+				<li><neos:link.node node="{event}" title="{event.properties.title}">mehr Details</neos:link.node></li>
+			</ul>
+			<h4><neos:link.node node="{event}" title="{event.properties.title}">{event.properties.title}</neos:link.node></h4>
+			{event.properties.startDate -> f:format.date(cldrFormat: 'd.', forceLocale: true)} - {event.properties.endDate -> f:format.date(cldrFormat: 'd. MMMM y', forceLocale: true)}<br />
+			{event.properties.sailingArea}
+		</div>
+	</div>
+</f:section>

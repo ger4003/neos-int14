@@ -1,0 +1,21 @@
+'Skail.Int14Ger:Timeline':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Timeline'
+    group: 'structure'
+  properties:
+    type:
+      type: string
+      ui:
+        label: 'Typ'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'content'
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'Wähle ...'
+            values:
+              '':
+                label: ''
+              'Skail.Int14Ger:Event':
+                label: 'Event'

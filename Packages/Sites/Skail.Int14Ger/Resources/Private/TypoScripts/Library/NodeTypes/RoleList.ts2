@@ -1,0 +1,24 @@
+#
+# Role list rendering
+#
+prototype(Skail.Int14Ger:RoleList) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/RoleList.html'
+	roleListItems = TYPO3.TypoScript:Collection {
+		collection = ${q(node).property('roles') ? q(node).property('roles') : q(site).find('[instanceof Skail.Int14Ger:Role]')}
+		itemName = 'role'
+		itemRenderer = Skail.Int14Ger:RoleListItem
+		iterationName = 'iterator'
+
+		@cache.mode = 'cached'
+	}
+}
+
+prototype(Skail.Int14Ger:RoleListItem) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/RoleList.html'
+	sectionName = 'roleListItem'
+
+	role = ${role}
+	subRoles = ${q(node).children('[instanceof Skail.Int14Ger:Role]')}
+	persons = ${q(role).property('persons')}
+	roleIterator = ${iterator}
+}

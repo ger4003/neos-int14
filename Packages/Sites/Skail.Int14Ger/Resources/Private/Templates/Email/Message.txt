@@ -1,0 +1,14 @@
+Hallo {recipientName},
+
+das Kontaktformular wurde ausgefüllt und eine E-Mail an {recipientAddress} verschickt.
+
+Name: {form.formState.formValues.name}
+E-Mail: {form.formState.formValues.email}
+
+Nachricht:
+
+{form.formState.formValues.message}
+
+--
+Kontaktformular
+http://international14.de

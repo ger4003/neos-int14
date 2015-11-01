@@ -1,0 +1,20 @@
+'Skail.Int14Ger:Carousel':
+  superTypes: ['TYPO3.Neos:Content']
+  childNodes:
+    'carouselItems':
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'TYPO3.Neos.NodeTypes:Image': TRUE
+          '*': FALSE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  ui:
+    label: 'Karussell'
+    group: 'plugins'
+    icon: 'icon-picture'
+    inlineEditable: TRUE
+  properties:
+    title:
+      defaultValue: 'Karussell'

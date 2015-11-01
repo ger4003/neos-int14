@@ -1,0 +1,48 @@
+'Skail.Int14Ger:ContactInfo':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Kontakt Info'
+    group: 'plugins'
+    icon: 'icon-home'
+    inlineEditable: TRUE
+  properties:
+    street:
+      type: string
+      ui:
+        label: 'Strasse'
+    zip:
+      type: string
+      ui:
+        label: 'PLZ'
+    city:
+      type: string
+      ui:
+        label: 'Stadt'
+    phone:
+      type: string
+      ui:
+        label: 'Telefon'
+    fax:
+      type: string
+      ui:
+        label: 'Fax'
+    email:
+      type: string
+      ui:
+        label: 'E-Mail'
+    url:
+      type: string
+      ui:
+        label: 'URL'
+    facebook:
+      type: string
+      ui:
+        label: 'Facebook'
+    twitter:
+      type: string
+      ui:
+        label: 'Twitter'
+    googleplus:
+      type: string
+      ui:
+        label: 'Google Plus'

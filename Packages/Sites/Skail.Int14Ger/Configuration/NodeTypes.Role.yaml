@@ -1,0 +1,39 @@
+'Skail.Int14Ger:Role':
+  superTypes: ['TYPO3.Neos:Document']
+  ui:
+    label: 'Rolle'
+    group: kv
+    icon: 'icon-group'
+  properties:
+    persons:
+      type: references
+      ui:
+        label: 'Persons'
+        reloadIfChanged: TRUE
+        inspector:
+          group: document
+          editorOptions:
+            nodeTypes: ['Skail.Int14Ger:Person']
+    email:
+      type: string
+      ui:
+        label: 'E-Mail'
+        inspector:
+          group: document
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        'TYPO3.Neos/Validation/EmailAddressValidator': []
+    emailAlias:
+      type: string
+      ui:
+        label: 'E-Mail Alias'
+        inspector:
+          group: document
+      validation:
+        'TYPO3.Neos/Validation/EmailAddressValidator': []
+    isExecutiveCommittee:
+      type: boolean
+      ui:
+        label: 'Ist Teil des Vorstands'
+        inspector:
+          group: document

@@ -1,0 +1,29 @@
+'Skail.Int14Ger:StageSliderImage':
+  superTypes: ['TYPO3.Neos.NodeTypes:Image']
+  ui:
+    label: 'Stage-Slider-Image'
+  properties:
+    image:
+      ui:
+        label: 'Bild (1680x685)'
+        inspector:
+          editorOptions:
+            features:
+              crop: TRUE
+            crop:
+              aspectRatio:
+                options:
+                  stageSlider:
+                    width: 1680
+                    height: 685
+                    label: 'Stage-Slider-Image'
+                  square: ~
+                  fourFive: ~
+                  fiveSeven: ~
+                  twoThree: ~
+                  fourThree: ~
+                  sixteenNine: ~
+                allowCustom: FALSE
+                locked:
+                  width: 1680
+                  height: 685

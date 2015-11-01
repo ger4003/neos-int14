@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="col-lg-3 col-md-3 col-sm-3">
+		{column0 -> f:format.raw()}
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-3">
+		{column1 -> f:format.raw()}
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-3">
+		{column2 -> f:format.raw()}
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-3">
+		{column3 -> f:format.raw()}
+	</div>
+</div>
+<f:if condition="{noBottomPadding}">
+	<f:then></f:then>
+	<f:else>
+		<div class="clearfix clearfix-height40"></div>
+	</f:else>
+</f:if>

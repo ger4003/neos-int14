@@ -1,0 +1,15 @@
+{
+  "name": "skail-int14ger",
+  "version": "0.0.0",
+  "description": "international14.de site package",
+  "author": "Kai Möller",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-jscs": "~1.5.0",
+    "grunt-contrib-jshint": "~0.9.2",
+    "grunt-contrib-watch": "~0.6.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-cssmin": "~0.12.2",
+    "grunt-concurrent": "~0.5.0"
+  }
+}

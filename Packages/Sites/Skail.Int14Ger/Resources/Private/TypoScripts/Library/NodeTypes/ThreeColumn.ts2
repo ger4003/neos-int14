@@ -1,0 +1,15 @@
+prototype(TYPO3.Neos.NodeTypes:ThreeColumn) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/ThreeColumn.html'
+
+	column0 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column0'
+	}
+
+	column1 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column1'
+	}
+
+	column2 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column2'
+	}
+}

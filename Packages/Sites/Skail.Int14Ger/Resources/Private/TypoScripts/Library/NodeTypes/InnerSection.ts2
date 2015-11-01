@@ -1,0 +1,13 @@
+prototype(Skail.Int14Ger:InnerSection) {
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+	}
+
+	attributes = TYPO3.TypoScript:Attributes {
+		class = 'full_bg full-width-bg marine-main-team-bg marine-aboutus-team-bg'
+		style = TYPO3.Neos:ImageUri {
+			asset = ${q(node).property('backgroundImage')}
+			@process.backgroundImagePrefix = ${'background-image: url(' + value + ')'}
+		}
+	}
+}

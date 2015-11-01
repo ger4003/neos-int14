@@ -1,0 +1,18 @@
+'Skail.Int14Ger:RoleList':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Rollenliste'
+    icon: 'icon-group'
+    group: kv
+  properties:
+    title:
+      defaultValue: 'Rollenliste'
+    roles:
+      type: references
+      ui:
+        label: 'Rollen'
+        reloadIfChanged: TRUE
+        inspector:
+          group: content
+          editorOptions:
+            nodeTypes: ['Skail.Int14Ger:Role']

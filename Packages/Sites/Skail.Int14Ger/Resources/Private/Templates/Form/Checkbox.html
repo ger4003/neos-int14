@@ -1,0 +1,12 @@
+<f:layout name="TYPO3.Form:Field" />
+<f:section name="field">
+	<label class="{element.properties.elementClassAttribute} checkbox">
+		<f:form.checkbox
+				property="{element.identifier}"
+				id="{element.uniqueIdentifier}"
+				class="{element.properties.elementClassAttribute}"
+				value="{element.properties.value}"
+				errorClass="{element.properties.elementErrorClassAttribute}" />
+		<span>{label}</span>
+	</label>
+</f:section>

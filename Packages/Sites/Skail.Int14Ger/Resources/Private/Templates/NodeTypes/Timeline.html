@@ -1,0 +1,92 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace skail=Skail\Int14Ger\ViewHelpers}
+{namespace m=TYPO3\Media\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<f:section name="timelineItem">
+	<div class="col-lg-6 col-md-6 col-sm-6 masonry-box" data-year="{event.startDate -> f:format.date(format: 'Y')}" data-month="{event.startDate -> f:format.date(cldrFormat: 'MMMM', forceLocale: true)}">
+		<div class="blog-post masonry">
+			<!-- POST FOOTER -->
+			<div class="post-footer">
+				<f:if condition="{item.properties.locationAvatar}">
+					<m:image asset="{item.properties.locationAvatar}" class="avatar" alt="{item.properties.city}" maximumWidth="60" maximumHeight="60" />
+				</f:if>
+				<span class="post-date">
+					<span class="post-day">{item.properties.startDate -> f:format.date(format: 'd.')} - {item.properties.endDate -> f:format.date(cldrFormat: 'd. MMMM' forceLocale: true)}</span>
+					{item.properties.endDate -> f:format.date(format: 'Y')}
+				</span>
+				<ul class="post-meta">
+					<li>{item.properties.location}</li>
+				</ul>
+			</div>
+			<!-- END POST FOOTER -->
+			<div class="post">
+				<div class="post-thumbnail">
+					<f:if condition="{item.properties.timelineImage}">
+						<f:then>
+							<m:image asset="{item.properties.timelineImage}" alt="{item.properties.title}" maximumWidth="528" maximumHeight="214" allowCropping="1"/>
+						</f:then>
+						<f:else>
+							<f:if condition="{item.properties.mainImage}">
+								<f:then>
+									<m:image asset="{item.properties.mainImage}" alt="{item.properties.title}" maximumWidth="528" maximumHeight="214" allowCropping="1"/>
+								</f:then>
+								<f:else>
+									<f:if condition="{backend}">
+										<img src="https://placehold.it/528x214" alt="{title}"/>
+									</f:if>
+								</f:else>
+							</f:if>
+						</f:else>
+					</f:if>
+				</div>
+				<div class="post-content">
+					<div class="post-details">
+						<h4 class="post-title">
+							<span class="icons icon-calendar"></span>
+							<neos:link.node node="{item}" title="{item.properties.title}">{item.properties.title}</neos:link.node>
+						</h4>
+					</div>
+					<p class="latest-from-blog_item_text">
+						<f:if condition="{item.properties.description}">
+							<f:then>
+								{item.properties.description}
+							</f:then>
+							<f:else>
+								Revier: {item.properties.sailingArea}
+							</f:else>
+						</f:if>
+					</p>
+					<neos:link.node node="{item}" title="{item.properties.title}" class="read-more big">Mehr erfahren</neos:link.node>
+				</div>
+				<div class="clear"><!-- --></div>
+			</div>
+		</div>
+	</div>
+</f:section>
+
+<div class="timeline-container-wrap">
+	<skail:dateGroup objects="{items}" groupBy="startDate" cldrFormat="MMMM y" forceLocale="{true}">
+		<f:for each="{groups}" as="events" key="groupName" iteration="iterator">
+			<div class="timeline-date-tooltip {f:if(condition: iterator.isFirst, then: '', else: 'timeline-date-tooltip-top')}">
+				<span>{groupName}</span>
+			</div>
+			<div class="row timeline-row">
+				<div class="masonry-container timeline-container">
+					<f:for each="{events}" as="event">
+						<ts:render path="timelineItem" context="{item: event, iterator: iterator, node: node}" />
+					</f:for>
+				</div>
+			</div>
+		</f:for>
+	</skail:dateGroup>
+	<script>
+		var timelinePerPage = 8;
+		var timelineOffset = 0;
+		var timelineOffsetNext = (   timelinePerPage * timelineOffset ) + timelinePerPage; // Current
+		// Offset of page
+		var currentMonth = null;
+		var currentYear = null;
+		var templateUrl = "#";
+	</script>
+</div>

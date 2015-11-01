@@ -1,0 +1,26 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<f:if condition="{items}">
+	<p {attributes -> f:format.raw()}>
+	<f:for each="{items}" as="item" reverse="TRUE" iteration="iterator">
+		<f:if condition="{item.state} == 'current'">
+			<f:then>
+				<span{ts:render(path:'{item.state}.attributes', context: {item: item}) -> f:format.raw()}>{item.label}</span>
+			</f:then>
+			<f:else>
+				<f:if condition="{item.node}">
+				<span><neos:link.node node="{item.node}" rel="v:url" additionalAttributes="{property: 'v:title'}" /></span>
+				</f:if>
+			</f:else>
+		</f:if>
+
+		<f:if condition="{iterator.isLast}">
+			<f:then></f:then>
+			<f:else>
+				<span class="delimiter">|</span>
+			</f:else>
+		</f:if>
+	</f:for>
+	</p>
+</f:if>

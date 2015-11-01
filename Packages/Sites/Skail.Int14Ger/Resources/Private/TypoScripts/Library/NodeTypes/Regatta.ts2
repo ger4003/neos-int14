@@ -1,0 +1,12 @@
+#
+# Event rendering
+#
+prototype(Skail.Int14Ger:Regatta.Document) < prototype(Skail.Int14Ger:Event.Document) {
+	body.renderHeader = FALSE
+	body.content.main = Skail.Int14Ger:Regatta
+}
+
+prototype(Skail.Int14Ger:Regatta) < prototype(Skail.Int14Ger:Event) {
+	noticeOfRaceLink.@process.convertUris = TYPO3.Neos:ConvertUris
+	entryFormLink.@process.convertUris = TYPO3.Neos:ConvertUris
+}

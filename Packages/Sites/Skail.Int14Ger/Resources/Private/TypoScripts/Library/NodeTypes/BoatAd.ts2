@@ -1,0 +1,24 @@
+#
+# Event rendering
+#
+prototype(Skail.Int14Ger:BoatAd.Document) < prototype(Skail.Int14Ger:DetailPage.Document) {
+	body.renderHeader = FALSE
+	body.content.main = Skail.Int14Ger:BoatAd
+}
+
+prototype(Skail.Int14Ger:BoatAd) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/BoatAd.html'
+
+	// The full main content collection (editable)
+	main = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+	}
+	aside = TYPO3.Neos:ContentCollection {
+		nodePath = 'aside'
+	}
+	beneath = TYPO3.Neos:ContentCollection {
+		nodePath = 'beneath'
+	}
+
+	attributes.class = 'row'
+}
