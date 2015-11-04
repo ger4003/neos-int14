@@ -21,7 +21,7 @@ But there is a shorthand located in the root dir. For creating minified assets c
 
 	./publishassets.sh
  
-## Setting um Neos
+## Setting up Neos
 
 To set up your websever follow instrutions on https://www.neos.io/develop/download.html.
 After that call http://your-neos.local/setup. and follow the on-screen instructions to set up database.
