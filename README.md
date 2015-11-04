@@ -11,7 +11,7 @@ First you need to clone the repository from GitHub.
 
 After that go to your repository root directory and install all needed composer dependencies like this:
 
- composer install
+	composer install
 
 ## Install JavaScript dependencies via npm
 
@@ -19,7 +19,7 @@ The site pacakge depends on minified css and js files. You can have a look into 
 The minified files are created via grunt which is configured with package.json also located in the site package. Usally you have to change into the site package directory an call grunt threre.
 But there is a shorthand located in the root dir. For creating minified assets call:
 
- ./publishassets.sh
+	./publishassets.sh
  
 ## Setting um Neos
 
