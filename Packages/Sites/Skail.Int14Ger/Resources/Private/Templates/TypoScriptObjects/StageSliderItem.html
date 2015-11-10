@@ -1,6 +1,6 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
-<li{attributes -> f:format.raw()}>
+<li{attributes -> f:format.raw()} data-transition="fade">
 	<f:if condition="{image}">
 		<f:then>
 			<media:image image="{image}" alt="{alternativeText}" title="{title}" additionalAttributes="{data-bgposition: 'center top', data-bgfit: 'cover', data-bgrepeat: 'no-repeat'}" />

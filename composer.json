@@ -9,7 +9,7 @@
     "require": {
         "typo3/neos": "~2.1.0",
         "typo3/neos-nodetypes": "~2.1.0",
-        "typo3/neos-seo": "*",
+        "typo3/neos-seo": "~1.0",
 
         "doctrine/migrations": "~1.0",
         "typo3/swiftmailer": "~5.0.3",

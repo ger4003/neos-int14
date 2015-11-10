@@ -4,7 +4,11 @@ prototype(Skail.Int14Ger:InnerSection) {
 	}
 
 	attributes = TYPO3.TypoScript:Attributes {
-		class = 'full_bg full-width-bg marine-main-team-bg marine-aboutus-team-bg'
+		class = TYPO3.TypoScript:RawArray {
+			basic = 'full_bg full-width-bg'
+			additional = ${q(node).property('backgroundImage') ? '' : q(node).property('backgroundClass') ? q(node).property('backgroundClass') : 'marine-full_bg-services'}
+		}
+
 		style = TYPO3.Neos:ImageUri {
 			asset = ${q(node).property('backgroundImage')}
 			@process.backgroundImagePrefix = ${'background-image: url(' + value + ')'}

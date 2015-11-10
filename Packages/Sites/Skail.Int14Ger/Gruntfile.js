@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 						'Resources/Public/Scripts/Vendor/jquery.validity.min.js',
 						'Resources/Public/Scripts/Vendor/tweetie.min.js',
 						'Resources/Public/Scripts/Vendor/script.js',
-						'Resources/Public/Scripts/Vendor/rs-plugin/js/jquery.themepunch.enablelog.js',
+						//'Resources/Public/Scripts/Vendor/rs-plugin/js/jquery.themepunch.enablelog.js',
 						'Resources/Public/Scripts/Vendor/rs-plugin/js/jquery.themepunch.revolution.js',
 						'Resources/Public/Scripts/Vendor/rs-plugin/js/jquery.themepunch.tools.min.js',
 						'Resources/Public/Scripts/Custom/jquery.stagesSlider.js',

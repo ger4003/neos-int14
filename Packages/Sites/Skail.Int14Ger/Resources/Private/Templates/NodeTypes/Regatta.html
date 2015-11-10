@@ -131,9 +131,11 @@
 							<div class="clearfix clearfix-height30"></div>
 							{main -> f:format.raw()}
 
-							<h3>{storyNode.properties.title}</h3>
-							<h4>{storyNode.properties.author.properties.title} {storyNode.properties.author.properties.email}</h4>
-							{storyContent -> f:format.raw()}
+							<f:if condition="{storyNode}">
+								<h3>{storyNode.properties.title}</h3>
+								<h4>{storyNode.properties.author.properties.title} {storyNode.properties.author.properties.email}</h4>
+								{storyContent -> f:format.raw()}
+							</f:if>
 							<!-- /Post Content -->
 						</div>
 					</div>

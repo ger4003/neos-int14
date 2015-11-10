@@ -21,6 +21,10 @@ span.read-more {
     display: none;
 }
 
+.skail-int14ger-innersection.marine-full_bg-services {
+    padding-bottom: 70px;
+}
+
 @media (min-width:992px) {
     #header img.logo {
         max-height: 80px;

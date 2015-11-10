@@ -1,12 +1,36 @@
 
 'Skail.Int14Ger:InnerSection':
   superTypes:
-    'Skail.Int14Ger:Section': true
+    'TYPO3.Neos:Content': true
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+          nodeTypes:
+            'Skail.Int14Ger:Section': false
+            'Skail.Int14Ger:InnerSection': false
   ui:
     label: 'Section mit Hintergrund'
   properties:
     title:
       defaultValue: InnerSection
+    backgroundClass:
+      type: string
+      defaultValue: marine-full_bg-services
+      ui:
+        label: Hintergrundfarbe
+        reloadIfChanged: true
+        inspector:
+          group: content
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Wähle ...'
+            values:
+              'marine-full_bg':
+                label: dunkelblau
+              'marine-full_bg-services':
+                label: hellgrau
+
     backgroundImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:

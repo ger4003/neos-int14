@@ -1,21 +1,16 @@
 (function($, site, document, undefined) {
 	site.init = function() {
-		var $this = $(this);
-
 		// search for plugin calls in the form of data-int14ger-plugin="pluginname"
 		$('[data-int14ger-plugin]').each(function() {
 			var $that = $(this),
 				pluginName = $that.data('int14ger-plugin'),
 				options = $that.data('int14ger-plugin-options');
 
-			console.log(options);
-
-			$this[pluginName](options);
+			$that[pluginName](options);
 		});
 	};
 
 	site.neosWorkspaceName = (function() {
-
 		if ($('meta[name="neos-workspace"]').attr('content') !== undefined) {
 			return $('meta[name="neos-workspace"]').attr('content');
 		} else {

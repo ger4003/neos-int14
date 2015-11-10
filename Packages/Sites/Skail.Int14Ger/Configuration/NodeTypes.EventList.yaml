@@ -17,16 +17,15 @@
         reloadIfChanged: true
         inspector:
           group: content
-          editor: Content/Inspector/Editors/SelectBoxEditor
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-            placeholder: 'Wähle ...'
             values:
               '':
                 label: ''
               'Skail.Int14Ger:Event':
-                label: alle
+                label: i18n
               'Skail.Int14Ger:Regatta':
-                label: Regatta
+                label: i18n
     orderBy:
       type: string
       ui:
@@ -34,7 +33,7 @@
         reloadIfChanged: true
         inspector:
           group: content
-          editor: Content/Inspector/Editors/SelectBoxEditor
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Wähle eine Eigenschaft'
             values:

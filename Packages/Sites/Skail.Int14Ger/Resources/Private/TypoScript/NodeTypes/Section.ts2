@@ -1,8 +1,10 @@
 prototype(Skail.Int14Ger:Section) {
+	hasTopPadding = ${!q(node).property('noTopPadding')}
+
 	content = TYPO3.Neos:ContentCollection {
 		tagName = 'section'
 		nodePath = 'content'
-		attributes.class = ${q(node).property('noTopPadding') ? 'col-lg-12 col-md-12 col-sm-12 small-padding marine-contents-container' : 'col-lg-12 col-md-12 col-sm-12 small-padding'}
+		attributes.class = ${this.hasTopPadding ? 'col-lg-12 col-md-12 col-sm-12 small-padding' : 'col-lg-12 col-md-12 col-sm-12 small-padding marine-contents-container'}
 	}
 	attributes.class = 'row'
 }

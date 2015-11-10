@@ -17,7 +17,7 @@
         reloadIfChanged: true
         inspector:
           group: content
-          editor: Content/Inspector/Editors/SelectBoxEditor
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Wähle ...'
             values:
@@ -34,7 +34,7 @@
         reloadIfChanged: true
         inspector:
           group: content
-          editor: Content/Inspector/Editors/SelectBoxEditor
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Wähle eine Eigenschaft'
             values:

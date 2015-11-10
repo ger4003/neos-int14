@@ -5,6 +5,21 @@
 			<trans-unit id="ui.label" xml:space="preserve">
 				<source>Boat Ad</source>
 			</trans-unit>
+			<trans-unit id="properties.hasTfoil" xml:space="preserve">
+				<source>Has T-Foil</source>
+			</trans-unit>
+			<trans-unit id="properties.yearBuild" xml:space="preserve">
+				<source>Year build</source>
+			</trans-unit>
+			<trans-unit id="properties.hull" xml:space="preserve">
+				<source>Hull design</source>
+			</trans-unit>
+			<trans-unit id="properties.mast" xml:space="preserve">
+				<source>Mast design</source>
+			</trans-unit>
+			<trans-unit id="properties.location" xml:space="preserve">
+				<source>Location</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

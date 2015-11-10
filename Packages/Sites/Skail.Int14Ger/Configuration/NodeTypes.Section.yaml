@@ -5,6 +5,10 @@
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+          nodeTypes:
+            'Skail.Int14Ger:Section': false
+            '*': true
   ui:
     label: 'Section für Inhalte'
     group: structure
@@ -16,5 +20,6 @@
       type: boolean
       ui:
         label: 'Top Padding entfernen'
+        reloadIfChanged: true
         inspector:
           group: content

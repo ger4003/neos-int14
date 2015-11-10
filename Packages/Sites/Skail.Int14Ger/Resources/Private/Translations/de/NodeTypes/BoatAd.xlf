@@ -6,6 +6,26 @@
 				<source>Boat Ad</source>
 				<target xml:lang="de">Bootsanzeige</target>
 			</trans-unit>
+			<trans-unit id="properties.hasTfoil" xml:space="preserve">
+				<source>Has T-Foil</source>
+				<target>T-Foil vorhanden?</target>
+			</trans-unit>
+			<trans-unit id="properties.yearBuild" xml:space="preserve">
+				<source>Year build</source>
+				<target>Baujahr</target>
+			</trans-unit>
+			<trans-unit id="properties.hull" xml:space="preserve">
+				<source>Hull design</source>
+				<target>Rumpf-Design</target>
+			</trans-unit>
+			<trans-unit id="properties.mast" xml:space="preserve">
+				<source>Mast design</source>
+				<target>Mast-Design</target>
+			</trans-unit>
+			<trans-unit id="properties.location" xml:space="preserve">
+				<source>Location</source>
+				<target>Standort</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

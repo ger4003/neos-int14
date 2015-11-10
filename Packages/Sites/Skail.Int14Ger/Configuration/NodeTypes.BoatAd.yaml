@@ -1,7 +1,7 @@
-
 'Skail.Int14Ger:BoatAd':
   superTypes:
-    'Skail.Int14Ger:Ad': true
+    'TYPO3.Neos:Document': true
+    'Skail.Int14Ger:AdMixin': true
   ui:
     label: i18n
     group: kv
@@ -11,7 +11,7 @@
       type: boolean
       defaultValue: true
       ui:
-        label: 'T-Foil vorhanden?'
+        label: i18n
         inspector:
           group: document
           position: 30
@@ -19,23 +19,23 @@
       type: string
       defaultValue: 'Baujahr eingeben...'
       ui:
-        label: Baujahr
+        label: i18n
         inlineEditable: true
     hull:
       type: string
       defaultValue: 'Rumpfdesign eingeben...'
       ui:
-        label: Rumpfdesign
+        label: i18n
         inlineEditable: true
     mast:
       type: string
       defaultValue: 'Mastdesign eingeben...'
       ui:
-        label: Mastdesign
+        label: i18n
         inlineEditable: true
     location:
       type: string
       defaultValue: 'Standort eingeben...'
       ui:
-        label: Standort
+        label: i18n
         inlineEditable: true

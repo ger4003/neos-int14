@@ -1,11 +1,10 @@
-#
-# Blog post list rendering
-#
+
+// TODO: rename PostList into PostSlider
 prototype(Skail.Int14Ger:PostList) {
 	templatePath = 'resource://Skail.Int14Ger/Private/Templates/NodeTypes/PostList.html'
 	postListItems = TYPO3.TypoScript:Collection {
 		type = 'Skail.Int14Ger:Post'
-		limit = 0
+		limit = 3
 		orderBy = 'datePublished'
 		collection = ${Search.query(site).nodeType(this.type).sortDesc(this.orderBy).limit(this.limit).execute()}
 		itemName = 'post'

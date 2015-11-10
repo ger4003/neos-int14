@@ -15,6 +15,11 @@
 
 'TYPO3.Neos.NodeTypes:Page':
   childNodes:
+    main:
+      constraints:
+        nodeTypes:
+          'Skail.Int14Ger:Section': true
+          '*': false
     footer:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
@@ -138,3 +143,10 @@
               '': null
               contact-role-form:
                 label: 'Kontakt Formular (Ämter)'
+
+'TYPO3.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'Skail.Int14Ger:InnerSection': false
+      'Skail.Int14Ger:StageSlider': false
+      'Skail.Int14Ger:StageSliderImage': false

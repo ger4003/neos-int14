@@ -1,15 +1,54 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
 
-<div>
+<div class="row">
 	<neos:contentElement.editable tag="h3" property="title" />
 
-	{postListItems -> f:format.raw()}
+	<div class="flexslider" data-int14ger-plugin="flexslider" data-int14ger-plugin-options='{"slideshow": true, "directionNav": false, "slideshowSpeed": 6000, "animationSpeed": 1500, "selector": ".slides > .teaser-latest"}'>
+		<div class="slides">
+			{postListItems -> f:format.raw()}
+		</div>
+	</div>
+
+	<f:comment>
+		<!-- TODO: render latest posts -->
+	</f:comment>
 </div>
 
 <f:section name="postListItem">
-	<div>
-		<neos:link.node node="{post}">{post.properties.title}</neos:link.node>
-		{post.properties.teaser}
+	<div class="teaser-latest row">
+		<neos:link.node node="{post}">
+			<div class="col-lg-9 col-md-9 col-sm-12 images">
+				<f:if condition="{post.properties.teaserImage}">
+					<f:then>
+						<media:image asset="{post.properties.teaserImage}" alt="{post.properties.teaserImage.title}" title="{post.properties.teaserImage.title}" maximumWidth="847" maximumHeight="400" allowCropping="TRUE" />
+					</f:then>
+					<f:else>
+						<f:security.ifAccess privilegeTarget="TYPO3_Neos_Backend_GeneralAccess">
+							<f:if condition="{node.context.workspace.name} != 'live'">
+								<img src="https://placehold.it/859x450?text={post.properties.teaserImage.title}" alt="{post.properties.teaserImage.title}"/>
+							</f:if>
+						</f:security.ifAccess>
+					</f:else>
+				</f:if>
+
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-12 description">
+				<div class="hgroup">
+					<h3>
+						<span>{post.properties.title}</span>
+						{post.properties.subtitle}
+					</h3>
+				</div>
+				<p>
+					{post.properties.teaser}
+					<span class="link-more">
+						mehr erfahren
+					</span>
+				</p>
+				<span class="arrow"></span>
+			</div>
+		</neos:link.node>
 	</div>
 </f:section>
