@@ -1,10 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "hash": "6844e5ef43415c83bd74ccfa38c82644",
+    "content-hash": "f2d087171ca2a7f7fb88d0bb4f1b89ce",
     "packages": [
         {
             "name": "composer/installers",
@@ -577,7 +578,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/b8ed2683bf48cf13c92f80d99cb723ae28efb227",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/b386d2a17634192fc406acc4090d58eb6e903ca5",
                 "reference": "b8ed2683bf48cf13c92f80d99cb723ae28efb227",
                 "shasum": ""
             },
@@ -813,12 +814,12 @@
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Console.git",
+                "url": "https://github.com/symfony/console.git",
                 "reference": "53f86497ccd01677e22435cfb7262599450a90d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/53f86497ccd01677e22435cfb7262599450a90d1",
+                "url": "https://api.github.com/repos/symfony/console/zipball/53f86497ccd01677e22435cfb7262599450a90d1",
                 "reference": "53f86497ccd01677e22435cfb7262599450a90d1",
                 "shasum": ""
             },
@@ -871,12 +872,12 @@
             "target-dir": "Symfony/Component/DomCrawler",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/DomCrawler.git",
+                "url": "https://github.com/symfony/dom-crawler.git",
                 "reference": "3860edcf7ff7e173cfe2151f0d425e610e77cc35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/3860edcf7ff7e173cfe2151f0d425e610e77cc35",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/3860edcf7ff7e173cfe2151f0d425e610e77cc35",
                 "reference": "3860edcf7ff7e173cfe2151f0d425e610e77cc35",
                 "shasum": ""
             },
@@ -1001,8 +1002,8 @@
             "version": "2.3.2",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Eel.git",
-                "reference": "fafef90011493d4fe8361f286de8478c554e443e"
+                "url": "https://github.com/neos/eel.git",
+                "reference": "ce8773aca3154cb0b1c49949efa07b95a270a077"
             },
             "require": {
                 "typo3/flow": "2.3.*"
@@ -1022,15 +1023,21 @@
         },
         {
             "name": "typo3/flow",
-            "version": "2.3.2",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "517e23b84312e1014d0b832125facdaaed9cbcb5"
+                "url": "https://github.com/neos/flow.git",
+                "reference": "0201919de3cb0bc1f57f5271514af4d241506ccc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/neos/flow/zipball/0201919de3cb0bc1f57f5271514af4d241506ccc",
+                "reference": "0201919de3cb0bc1f57f5271514af4d241506ccc",
+                "shasum": ""
             },
             "require": {
                 "composer/installers": "~1.0.2",
-                "doctrine/migrations": "dev-master",
+                "doctrine/migrations": "1.0.x-dev#f623eff82515f55d18199706851895ced831cba0",
                 "doctrine/orm": "2.3.*",
                 "ext-json": ">=1.2.0",
                 "ext-session": "*",
@@ -1060,15 +1067,15 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2015-03-04 21:09:22"
+            "time": "2015-05-29 14:41:58"
         },
         {
             "name": "typo3/fluid",
             "version": "2.3.2",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Fluid.git",
-                "reference": "7009ca496fcb8582c8fcbbd3dc0b7017f455ae36"
+                "url": "https://github.com/neos/fluid.git",
+                "reference": "18f9a90c9dc38c16bff9d6b5e28fc497d6728aaa"
             },
             "require": {
                 "typo3/flow": "2.3.*"
@@ -1091,8 +1098,8 @@
             "version": "1.2.2",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Form.git",
-                "reference": "aa1df3da8120b7735bedbd64ea18a775c4194a26"
+                "url": "https://github.com/neos/form.git",
+                "reference": "160b75d9075b7a245b20045aea1184056ff212d4"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1115,7 +1122,7 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Imagine.git",
+                "url": "https://github.com/neos/imagine.git",
                 "reference": "323197f2d669510ff3bb41d9307c63771ce250a4"
             },
             "require": {
@@ -1139,8 +1146,8 @@
             "version": "1.2.2",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Media.git",
-                "reference": "e44aa3377db0386a92f490d5535475eb98c03b43"
+                "url": "https://github.com/neos/media.git",
+                "reference": "57aff5d54db46e2ee817b8132cd7adecd70115f3"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1161,22 +1168,28 @@
         },
         {
             "name": "typo3/neos",
-            "version": "1.2.5",
+            "version": "1.2.13",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Neos.git",
-                "reference": "b46911b7d95a60e8ce0998662880e69ec37b6295"
+                "url": "https://github.com/neos/neos.git",
+                "reference": "240eab36bd01607bd5f40af104d33d42aeeb6d61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/neos/neos/zipball/240eab36bd01607bd5f40af104d33d42aeeb6d61",
+                "reference": "240eab36bd01607bd5f40af104d33d42aeeb6d61",
+                "shasum": ""
             },
             "require": {
                 "typo3/flow": "2.3.*",
-                "typo3/media": "1.2.*",
+                "typo3/media": "~1.2.0",
                 "typo3/setup": "1.1.*",
                 "typo3/twitter-bootstrap": "1.0.*",
-                "typo3/typo3cr": "1.2.*",
-                "typo3/typoscript": "1.2.*"
+                "typo3/typo3cr": "~1.2.0",
+                "typo3/typoscript": "~1.2.0"
             },
             "suggest": {
-                "typo3/neos-kickstarter": "Helps with creating new packages for TYPO3 Neos."
+                "typo3/neos-kickstarter": "Helps with creating new site packages for Neos."
             },
             "type": "typo3-flow-package",
             "extra": {
@@ -1193,16 +1206,16 @@
             "license": [
                 "GPL-3.0+"
             ],
-            "description": "The next generation of the popular open-source CMS.",
-            "time": "2015-04-18 14:47:16"
+            "description": "An open source Content Application Platform based on Flow. A set of core Content Management features is resting within a larger context that allows you to build a perfectly customized experience for your users.",
+            "time": "2015-11-23 21:06:36"
         },
         {
             "name": "typo3/neos-nodetypes",
             "version": "1.2.2",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Neos.NodeTypes.git",
-                "reference": "19c93c984b9de103aa0e3450bfe3804b6607f824"
+                "url": "https://github.com/neos/neos-nodetypes.git",
+                "reference": "e0a073115e69e050b9d55189ce1656a8b1fd5539"
             },
             "require": {
                 "typo3/neos": "1.2.*"
@@ -1225,8 +1238,8 @@
             "version": "2.3.2",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Party.git",
-                "reference": "df3d3768b45b5984c9f135836e4a6c419cf341c6"
+                "url": "https://github.com/neos/party.git",
+                "reference": "fbcb7a86007e2b5c3bcaf83887c4524e0ad87980"
             },
             "require": {
                 "typo3/flow": "2.3.*"
@@ -1249,8 +1262,8 @@
             "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Setup.git",
-                "reference": "13231c612cc9f94549a6dea3aa74d75c22e16590"
+                "url": "https://github.com/neos/setup.git",
+                "reference": "5d669e4147cbe1680769e690867ccf900c1d23f6"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1275,8 +1288,8 @@
             "version": "5.0.3",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.SwiftMailer.git",
-                "reference": "afe5bb45445cc2bb2d6c3481c84c0277f9489c0a"
+                "url": "https://github.com/neos/swiftmailer.git",
+                "reference": "e8364b17c55f9344f366251abdc6265fe9ff2b05"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1303,8 +1316,8 @@
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Twitter.Bootstrap.git",
-                "reference": "8d21200ae5179157b17d37de5638defdb831cc86"
+                "url": "https://github.com/neos/twitter-bootstrap.git",
+                "reference": "2d45b46c4bb888562a933088bf5691c2057192b3"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1327,8 +1340,8 @@
             "version": "1.2.2",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.TYPO3CR.git",
-                "reference": "90cc18ff9d867a5995e41103c428b2becd8ef7dc"
+                "url": "https://github.com/neos/typo3cr.git",
+                "reference": "3106119e076c139747d979ff73d71fad48d4f41a"
             },
             "require": {
                 "typo3/eel": "*",
@@ -1352,12 +1365,12 @@
             "version": "1.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/TYPO3-Neos/TYPO3.TYPO3CR.Search.git",
+                "url": "https://github.com/neos/typo3cr-search.git",
                 "reference": "67bbd16c499036c1adca9eee6eaacaf411619d63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-Neos/TYPO3.TYPO3CR.Search/zipball/67bbd16c499036c1adca9eee6eaacaf411619d63",
+                "url": "https://api.github.com/repos/neos/typo3cr-search/zipball/67bbd16c499036c1adca9eee6eaacaf411619d63",
                 "reference": "67bbd16c499036c1adca9eee6eaacaf411619d63",
                 "shasum": ""
             },
@@ -1380,8 +1393,8 @@
             "version": "1.2.2",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.TypoScript.git",
-                "reference": "6f8e114532b76ca849099ef89beeaa496ede9c1c"
+                "url": "https://github.com/neos/typoscript.git",
+                "reference": "c72c53a211209b99ca995fe4fe1e1fc83df337bf"
             },
             "require": {
                 "typo3/eel": "*",
@@ -1412,7 +1425,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Flowpack/Flowpack.Behat/zipball/ad6f6812e343ccc4883bc3c42457c9c0c1b66a30",
+                "url": "https://api.github.com/repos/Flowpack/Flowpack.Behat/zipball/42ba311bd9e1c42c822abdce7a738cd9f0a26e61",
                 "reference": "ad6f6812e343ccc4883bc3c42457c9c0c1b66a30",
                 "shasum": ""
             },
@@ -1883,8 +1896,8 @@
             "version": "2.2.2",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Flow/BuildEssentials.git",
-                "reference": "a07984ca9afb3368e030edaa66053991b0f33b81"
+                "url": "https://github.com/neos/BuildEssentials.git",
+                "reference": "8c4d08523e4941968b420af2ec8a20774568b3e1"
             },
             "require": {
                 "composer/installers": "~1.0.2"
