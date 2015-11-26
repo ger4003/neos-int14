@@ -48,104 +48,6 @@
             "time": "2015-09-28 16:26:35"
         },
         {
-            "name": "composer/installers",
-            "version": "v1.0.22",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/installers.git",
-                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/bd9b14f094c89c8b5804a4e41edeb7853bb85046",
-                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "1.0.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
-            },
-            "require-dev": {
-                "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "4.1.*"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Composer\\Installers\\Plugin",
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Composer\\Installers\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kyle Robinson Young",
-                    "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama"
-                }
-            ],
-            "description": "A multi-framework Composer library installer",
-            "homepage": "http://composer.github.com/installers/",
-            "keywords": [
-                "Craft",
-                "Dolibarr",
-                "Hurad",
-                "MODX Evo",
-                "OXID",
-                "SMF",
-                "Thelia",
-                "WolfCMS",
-                "agl",
-                "aimeos",
-                "annotatecms",
-                "bitrix",
-                "cakephp",
-                "chef",
-                "codeigniter",
-                "concrete5",
-                "croogo",
-                "dokuwiki",
-                "drupal",
-                "elgg",
-                "fuelphp",
-                "grav",
-                "installer",
-                "joomla",
-                "kohana",
-                "laravel",
-                "lithium",
-                "magento",
-                "mako",
-                "mediawiki",
-                "modulework",
-                "moodle",
-                "phpbb",
-                "piwik",
-                "ppi",
-                "puppet",
-                "roundcube",
-                "shopware",
-                "silverstripe",
-                "symfony",
-                "typo3",
-                "wordpress",
-                "zend",
-                "zikula"
-            ],
-            "time": "2015-10-29 23:28:48"
-        },
-        {
             "name": "doctrine/annotations",
             "version": "v1.2.7",
             "source": {
@@ -787,12 +689,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Flowpack/Flowpack.ElasticSearch.ContentRepositoryAdaptor.git",
-                "reference": "6c0e9480cff2176e2dae8d5f491e51e3b01fd349"
+                "reference": "aa93f190a3df01d4358a287a50204eb5bd98330e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Flowpack/Flowpack.ElasticSearch.ContentRepositoryAdaptor/zipball/6c0e9480cff2176e2dae8d5f491e51e3b01fd349",
-                "reference": "6c0e9480cff2176e2dae8d5f491e51e3b01fd349",
+                "url": "https://api.github.com/repos/Flowpack/Flowpack.ElasticSearch.ContentRepositoryAdaptor/zipball/aa93f190a3df01d4358a287a50204eb5bd98330e",
+                "reference": "aa93f190a3df01d4358a287a50204eb5bd98330e",
                 "shasum": ""
             },
             "require": {
@@ -813,7 +715,7 @@
             ],
             "description": "This package provides functionality for using Elasticsearch on top of TYPO3CR.Search",
             "homepage": "http://flowpack.org/",
-            "time": "2015-10-30 06:45:24"
+            "time": "2015-11-17 10:46:48"
         },
         {
             "name": "flowpack/searchplugin",
@@ -976,6 +878,35 @@
                 "image processing"
             ],
             "time": "2015-09-19 16:54:05"
+        },
+        {
+            "name": "neos/composer-plugin",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/neos/composer-plugin.git",
+                "reference": "35a6166a1a7a033d0105f5500c057b184a47dfbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/neos/composer-plugin/zipball/35a6166a1a7a033d0105f5500c057b184a47dfbb",
+                "reference": "35a6166a1a7a033d0105f5500c057b184a47dfbb",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Neos\\ComposerPlugin\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Neos\\ComposerPlugin\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2015-10-17 12:29:21"
         },
         {
             "name": "symfony/console",
@@ -1196,20 +1127,19 @@
         },
         {
             "name": "typo3/flow",
-            "version": "3.0.0",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/flow.git",
-                "reference": "8e5d01a3ffcfc37c528b691768625ca1ce70fe86"
+                "reference": "556677410767eaf5299b3914d7097e5341583788"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/flow/zipball/8e5d01a3ffcfc37c528b691768625ca1ce70fe86",
-                "reference": "8e5d01a3ffcfc37c528b691768625ca1ce70fe86",
+                "url": "https://api.github.com/repos/neos/flow/zipball/556677410767eaf5299b3914d7097e5341583788",
+                "reference": "556677410767eaf5299b3914d7097e5341583788",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0.2",
                 "doctrine/migrations": "~1.0.0",
                 "doctrine/orm": "~2.4.0",
                 "ext-json": ">=1.2.0",
@@ -1217,12 +1147,13 @@
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "ext-zlib": "*",
+                "neos/composer-plugin": "^1.0.1",
                 "php": ">=5.5.0",
                 "symfony/console": "~2.0",
                 "symfony/dom-crawler": "~2.5.0",
                 "symfony/yaml": "~2.5.0",
-                "typo3/eel": "3.0.*",
-                "typo3/fluid": "3.0.*"
+                "typo3/eel": "~3.0.0",
+                "typo3/fluid": "~3.0.0"
             },
             "suggest": {
                 "doctrine/data-fixtures": "To manage and execute the loading of data fixtures for the Doctrine ORM or ODM",
@@ -1237,11 +1168,11 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0+"
+                "MIT"
             ],
-            "description": "TYPO3 Flow Application Framework",
+            "description": "Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2015-08-11 14:17:21"
+            "time": "2015-11-23 20:52:32"
         },
         {
             "name": "typo3/fluid",
@@ -1367,16 +1298,16 @@
         },
         {
             "name": "typo3/neos",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/neos.git",
-                "reference": "92961b2c895e9acbe04d18720ee93714b649e349"
+                "reference": "03afecdbcec82d25f9d7241fb6ab640701c40bae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/neos/zipball/92961b2c895e9acbe04d18720ee93714b649e349",
-                "reference": "92961b2c895e9acbe04d18720ee93714b649e349",
+                "url": "https://api.github.com/repos/neos/neos/zipball/03afecdbcec82d25f9d7241fb6ab640701c40bae",
+                "reference": "03afecdbcec82d25f9d7241fb6ab640701c40bae",
                 "shasum": ""
             },
             "require": {
@@ -1407,7 +1338,7 @@
                 "GPL-3.0+"
             ],
             "description": "An open source Content Application Platform based on Flow. A set of core Content Management features is resting within a larger context that allows you to build a perfectly customized experience for your users.",
-            "time": "2015-10-20 02:55:56"
+            "time": "2015-11-23 21:32:57"
         },
         {
             "name": "typo3/neos-nodetypes",
@@ -1653,6 +1584,104 @@
     ],
     "packages-dev": [
         {
+            "name": "composer/installers",
+            "version": "v1.0.22",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/bd9b14f094c89c8b5804a4e41edeb7853bb85046",
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "4.1.*"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Composer\\Installers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "http://composer.github.com/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Hurad",
+                "MODX Evo",
+                "OXID",
+                "SMF",
+                "Thelia",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "elgg",
+                "fuelphp",
+                "grav",
+                "installer",
+                "joomla",
+                "kohana",
+                "laravel",
+                "lithium",
+                "magento",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "moodle",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "puppet",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "zend",
+                "zikula"
+            ],
+            "time": "2015-10-29 23:28:48"
+        },
+        {
             "name": "doctrine/instantiator",
             "version": "1.0.5",
             "source": {
@@ -1781,35 +1810,6 @@
             "description": "Virtual file system to mock the real file system in unit tests.",
             "homepage": "http://vfs.bovigo.org/",
             "time": "2015-10-06 16:59:57"
-        },
-        {
-            "name": "neos/composer-plugin",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/neos/composer-plugin.git",
-                "reference": "35a6166a1a7a033d0105f5500c057b184a47dfbb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/neos/composer-plugin/zipball/35a6166a1a7a033d0105f5500c057b184a47dfbb",
-                "reference": "35a6166a1a7a033d0105f5500c057b184a47dfbb",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "1.0.0"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Neos\\ComposerPlugin\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Neos\\ComposerPlugin\\": "Classes"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "time": "2015-10-17 12:29:21"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
