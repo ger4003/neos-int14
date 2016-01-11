@@ -20,21 +20,12 @@ prototype(Skail.Int14Ger:DefaultPage) < prototype(Page) {
 	bodyTag.attributes.class = 'w1170 headerstyle8'
 
 	head {
-		titleTag {
-			@position = 'after characterSetMetaTag'
-			content = Ttree.Plugin.Seo:RawPageTitle
-		}
-
 		metaData = TYPO3.TypoScript:Array {
 			@position = 'after characterSetMetaTag'
 			main = TYPO3.TypoScript:Template {
 				templatePath = 'resource://Skail.Int14Ger/Private/Templates/Page/Default.html'
 				sectionName = 'metadata'
 			}
-		}
-
-		metaTags = Ttree.Plugin.Seo:MetaTags {
-			@position = 'after metaData'
 		}
 
 		stylesheets.main = TYPO3.TypoScript:Template {
@@ -152,5 +143,4 @@ detailPage = Skail.Int14Ger:DetailPage.Document
 ##################################
 
 include: NodeTypes/*
-include: Plugins/*
 include: Prototypes/*
