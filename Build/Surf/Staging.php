@@ -4,7 +4,7 @@
 
 // configure node
 $node = new \TYPO3\Surf\Domain\Model\Node('staging.international14.de');
-$node->setHostname('international14.de');
+$node->setHostname('staging.international14.de');
 $node->setOption('username', 'int14');
 $node->setOption('webserverUsername', 'www-data');
 $node->setOption('webserverGroupname', 'www-data');
