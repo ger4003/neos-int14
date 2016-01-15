@@ -13,7 +13,8 @@ $node->setOption('composerCommandPath', '/usr/local/bin/composer.phar');
 // configure application
 $application = new \TYPO3\Surf\Application\TYPO3\Neos();
 $application->setDeploymentPath('/var/www/vhosts/ger.international14.org/staging.international14.de/');
-$application->setOption('repositoryUrl', 'git.hidrive.strato.com:users/kai.lassen/Git/neos/Int14.git');
+$application->setOption('repositoryUrl', 'github.com/ger4003/neos-int14.git');
+$application->setOption('typo3.surf:gitCheckout[branch]', 'neos-update');
 $application->setOption('keepReleases', 3);
 $application->setOption('transferMethod', 'rsync');
 $application->setOption('packageMethod', 'git');
